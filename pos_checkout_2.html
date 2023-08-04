@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en" style="background: #ffffff">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="popper.min.js">
+        <title>結帳主頁</title>
+    </head>
+    <body style="background-color: white;">
+        <header class="pos_header">
+            <div class="pos_header_left">
+                <a href="pos_checkout_1.html">
+                    <img src="icon/back.svg" alt="" style="filter: contrast(.1);">
+                </a>
+                <div class="pos_mem">
+                    <button
+                    id="pos_mem"
+                    type="button" 
+                    class="btn position-relative"
+                    data-bs-toggle="modal" data-bs-target="#exampleModalmember"    
+                    >
+                        <img src="pos_icon/member.svg" alt="" />
+                        會員
+                    </button>
+                </div>
+                <div class="header_line">|</div>
+                <div class="pos_search">
+                    <img src="pos_icon/search.svg" alt="">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="form_control"
+                        placeholder="輸入條碼、品名"
+                        aria-label="Username"
+                        aria-describedby="basic-addon1"
+                    />
+
+
+                </div>
+                <div class="header_line">|</div>
+                <!-- 通知 -->
+                <div class="pos_notice">
+                    <button 
+                        type="button" 
+                        class="btn position-relative"
+                        data-bs-toggle="modal" data-bs-target="#exampleModalbell">
+                        <img src="pos_icon/bell.svg" alt="" />
+                        <span
+                            class="position-absolute top-0 start-100 badge rounded-pill bg-danger notice_bell"
+                        >
+                            3
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                    </button>
+                </div>
+                <!-- 未結單 -->
+                <a href="pos_home.html">
+                    <button
+                    class="btn"
+                    id="pos_padding"
+                    type="button"
+                >
+                    存單
+                </button>
+                </a>
+                
+                <button
+                    class="btn"
+                    id="pos_padding"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"
+                >
+                    取單
+                </button>
+
+                <div
+                    class="offcanvas offcanvas-end"
+                    tabindex="-1"
+                    id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel"
+                >
+                    <div class="offcanvas-header" id="offcanvas-header">
+                        <button
+                            type="button"
+                            class="btn-close text-reset"
+                            id="pos_padding_close"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <!-- 未結單列表 -->
+                    <div class="offcanvas-body" id="offcanvas-body">
+                        <table>
+                            <button
+                                type="button"
+                                class="btn"
+                                id="pos_padding_btn"
+                                data-bs-toggle="modal" data-bs-target="#exampleModal_saveorder"
+                            >
+                                <div class="pos_padding_btn_left">
+                                    <div>2024/01/01</div>
+                                    <br />
+                                    <div>
+                                        【常春藤】復她容
+                                        大豆異黃酮錠（60錠/盒）X6
+                                    </div>
+                                </div>
+                                <div class="pos_padding_btn_right">
+                                    <img src="pos_icon/ga.svg" alt="" />
+                                </div>
+                            </button>
+                            <button
+                                type="button"
+                                class="btn"
+                                id="pos_padding_btn"
+                            >
+                                <div class="pos_padding_btn_left">
+                                    <div>2024/01/01</div>
+                                    <br />
+                                    <div>
+                                        【常春藤】復她容
+                                        大豆異黃酮錠（60錠/盒）X6
+                                    </div>
+                                </div>
+                                <div class="pos_padding_btn_right">
+                                    <img src="pos_icon/ga.svg" alt="" />
+                                </div>
+                            </button>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="pos_header_right">
+       
+                <button type="button" class="btn" id="pos_menu">
+                    <a href="pos_home.html">
+                        <img src="pos_icon/menu.svg" alt="">
+                    </a>
+                    
+                </button>
+                <button id="pos_person" type="button" 
+                class="btn position-relative"
+                data-bs-toggle="modal" 
+                data-bs-target="#exampleModalperson">
+                    
+                    <div>daisy1234</div>
+                </button>
+        </header>
+        <section class="pos_com_body_checkout_2">
+            <div class="pos_left_out_2">
+                <div class="pos_check_2_top">
+                    <button 
+                    type="button"
+                    class="btn"
+                    id="orange_info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal_info"
+                    >
+                        <div class="orange_head"></div>
+                        <div class="pos_2_info">
+                            <div>
+                                <p>會員編號</p>
+                                <p>0123</p>
+                                <p>當前積分</p>
+                                <p>100</p>
+                            </div>
+                            <div>
+                                <p>會員姓名</p>
+                                <p>王小明</p>
+                                <p>折扣</p>
+                                <p>300</p>
+                            </div>
+                            <div>
+                                <p>會員類型</p>
+                                <p>一般會員</p>
+                                <p>折價券</p>
+                                <p>1</p>
+                            </div>
+                            <div>
+                                <p>會員折扣</p>
+                                <p>無</p>
+                                <p>會員電話</p>
+                                <p>0912-345-678</p>
+                            </div>
+                        </div>
+                    </button>
+                    
+                    <div class="pos_check_2_top_right">
+                        <button 
+                        type="button"
+                        class="btn"
+                        id="orange_discount"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal_discount"
+                        >
+                            <div class="orange_head"></div>
+                            <div class="pos_discount_title">
+                                折價券
+                            </div>
+                            <div class="pos_discount_list">
+                                <div>*全館滿6,000折600</div>
+                                <div>*維他命C+鈣+D3發泡錠,折50元
+                                </div>
+                                <div>*保麗淨 假牙清潔錠2入,兩盒9折
+                                </div>
+                            </div>
+                        </button>
+                        <div class="pos_2_point">
+                            <div class="orange_head"></div>
+                            <div class="pos_2_point_out">
+                                <div class="pos_2_point_line">
+                                    所有點數
+                                    <div class="pos_2_point_line_red">50</div>
+                                </div>
+                                <div class="pos_2_point_line">
+                                    最大可使用點數
+                                    <div class="pos_2_point_line_red">50</div>
+                                </div>
+                                <div class="pos_2_point_input">
+                                    <div class="point_in_out">
+                                        <input type="text" class="form-control" placeholder="50" aria-label="">
+                                        <button class="btn" type="button" id="button-addon2">全部</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="pos_check_2_bottom">
+                    <div class="orange_head"></div>
+                    <div class="pos_tag_out">
+                        <button type="button" class="btn" id="pos_tag">＃男生</button>
+                        <button type="button" class="btn" id="pos_tag">＃女生</button>
+                        <button type="button" class="btn" id="pos_tag">＃媽媽</button>
+                        <button type="button" class="btn" id="pos_tag">＃貓</button>
+                        <button type="button" class="btn" id="pos_tag">＃狗</button>
+                        <button type="button" class="btn" id="pos_tag">＃寵物</button>
+                        <button type="button" class="btn" id="pos_tag">＃爸爸</button>
+                        <button type="button" class="btn" id="pos_tag">＃學生族群</button>
+                        <button type="button" class="btn" id="pos_tag">＃20-30歲</button>
+                        <button type="button" class="btn" id="pos_tag">＃30-40歲</button>
+                        <button type="button" class="btn" id="pos_tag">＃40-50歲</button>
+                        <button type="button" class="btn" id="pos_tag">＃50-60歲</button>
+                        <button type="button" class="btn" id="pos_tag">＃60-70歲</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="com_condition_2">
+                <div class="pos_up_out">
+                    <div class="pos_up_out_left">
+                        <div>結帳金額</div>
+                        <div>TWD</div>
+                    </div>
+                    <div class="pos_up_out_right">
+                        <div>7,350</div>
+                    </div>
+                </div>
+                <div class="pos_up_out">
+                    <div class="pos_up_out_left">
+                        <div>已折扣</div>
+                        <div>TWD</div>
+                    </div>
+                    <div class="pos_up_out_right">
+                        <div>600</div>
+                    </div>
+                </div>
+                <div class="fn_btn_out_1">
+                    <div class="fn_btn_out">
+                        <button 
+                        type="button" 
+                        class="btn" 
+                        id="fn_barcode"
+                        data-bs-toggle="modal" 
+                        data-bs-target="#exampleModal_barcode">
+                        </button>
+                        <div style="color: #555;">載具條碼</div>
+                    </div>
+                    <div class="fn_btn_out">
+                        <button type="button" 
+                        class="btn" 
+                        id="fn_number"
+                        data-bs-toggle="modal" 
+                        data-bs-target="#exampleModal_number"
+                        >統一編號
+                        </button>
+                        <div style="color: #555;">統一編號</div>
+                    </div>
+                </div>
+                <div class="pos_pay_out">
+                    <button type="button" 
+                    class="btn" 
+                    id="pos_pay"
+                    data-bs-toggle="modal" 
+                    data-bs-target="#exampleModal_cash">
+                        <img src="pos_icon/cash.svg" alt="">
+                        <div>現金</div>
+                    </button>
+                    <button type="button" 
+                    class="btn" 
+                    id="pos_pay"
+                    data-bs-toggle="modal" 
+                    data-bs-target="#exampleModal_card">
+                        <img src="pos_icon/card.svg" alt="">
+                        <div>信用卡</div>
+                    </button>
+                    <button type="button" 
+                    class="btn" 
+                    id="pos_pay"
+                    data-bs-toggle="modal" 
+                    data-bs-target="#exampleModal_qrcode">
+                        <img src="pos_icon/scr.svg" alt="">
+                        <div>付款QRcode</div>
+                    </button>
+                    </div>
+                    <div class="pos_2_total">
+                        <div>件數：5</div>
+                        <div>折數：300</div>
+                    </div>
+
+                        <button type="button" 
+                        class="btn" 
+                        id="pos_send_out"
+                            <div>確認送出</div>
+                        </button>
+
+                </div>
+                
+            </div>
+        </section>
+         <!-- Modal  QRcode-->
+         <div class="modal fade" id="exampleModal_qrcode" tabindex="-1" aria-labelledby="pos_exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">QRcode結帳</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="pos_modal_pay_body">
+                    QRcode付款連線中...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn" id="pos_modal_btn" data-bs-dismiss="modal">退出</button>
+                </div>
+            </div>
+            </div>
+        </div>
+         <!-- Modal  Card-->
+         <div class="modal fade" id="exampleModal_card" tabindex="-1" aria-labelledby="pos_exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">信用卡結帳</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="pos_modal_pay_body">
+                    信用卡連線中...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn" id="pos_modal_btn" data-bs-dismiss="modal">退出</button>
+                </div>
+            </div>
+            </div>
+        </div>
+         <!-- Modal  Cash-->
+         <div class="modal fade" id="exampleModal_cash" tabindex="-1" aria-labelledby="pos_exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">現金結帳</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="pos_modal_pay_coin_body">
+
+                    <div>
+                        <div class="coin_num">
+                            <div>10</div>
+                            <button type="button" class="btn">
+                                <img src="pos_icon/coin_1.svg" alt="">
+                            </button>
+                        </div>
+                        <div class="coin_num">
+                            <div>10</div>
+                            <button type="button" class="btn">
+                                <img src="pos_icon/coin_5.svg" alt="">
+                            </button>
+                        </div>
+                        <div class="coin_num">
+                            <div>10</div>
+                            <button type="button" class="btn">
+                                <img src="pos_icon/coin_10.svg" alt="">
+                            </button>
+                        </div>
+                        <div class="coin_num">
+                            <div>10</div>
+                            <button type="button" class="btn">
+                                <img src="pos_icon/coin_50.svg" alt="">
+                            </button>
+                        </div>
+                        <button 
+                        type="button" 
+                        class="btn btn-secondary" 
+                        id="cash_input"
+                        data-bs-target="#exampleModalToggle2" 
+                        data-bs-toggle="modal">
+                            自行輸入
+                        </button>
+                    </div>
+                    <div>
+                        <div class="coin_num">
+                            <div>10</div>
+                            <button type="button" class="btn">
+                                <img src="pos_icon/coin_100.svg" alt="">
+                            </button>
+                        </div>
+                        <div class="coin_num">
+                            <div>10</div>
+                            <button type="button" class="btn">
+                                <img src="pos_icon/coin_500.svg" alt="">
+                            </button>
+                        </div>
+                        <div class="coin_num">
+                            <div>10</div>
+                            <button type="button" class="btn">
+                                <img src="pos_icon/coin_1000.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="pos_cash_total">
+                        <div>總收金額：</div>
+                        <div>5,000元</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn" id="pos_modal_btn" data-bs-dismiss="modal">送出</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal  Barcode-->
+        <div class="modal fade" id="exampleModal_barcode" tabindex="-1" aria-labelledby="pos_exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">電子載具</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="pos_modal_pay_body">
+                    請掃描載具條碼
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn" id="pos_modal_btn" data-bs-dismiss="modal">退出</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal 自行輸入-->
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content"  id="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalToggleLabel2">總收現金</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="cp_out">
+                    <div class="cp_top_out">
+
+                        <div class="cp_top_2">
+                            <input type="number">
+                        </div>
+                    </div>
+                    <div class="cp_keyboard_out">
+                        <div class="cp_keyboard">
+                            <button type="button" class="btn" id="cp_keyboard_in_num">7,400</button>
+                            <button type="button" class="btn" id="cp_keyboard_in">1</button>
+                            <button type="button" class="btn" id="cp_keyboard_in">2</button>
+                            <button type="button" class="btn" id="cp_keyboard_in">3</button>
+                            <button type="button" class="btn" id="cp_keyboard_in_num">7,500</button>
+                            <button type="button" class="btn" id="cp_keyboard_in">4</button>
+                            <button type="button" class="btn" id="cp_keyboard_in">5</button>
+                            <button type="button" class="btn" id="cp_keyboard_in">6</button>
+                            <button type="button" class="btn" id="cp_keyboard_in_num">8,000</button>
+                            <button type="button" class="btn" id="cp_keyboard_in">7</button>
+                            <button type="button" class="btn" id="cp_keyboard_in">8</button>
+                            <button type="button" class="btn" id="cp_keyboard_in">9</button>
+                            <button type="button" class="btn" id="cp_keyboard_in_num">8,500</button>
+
+                            <button type="button" class="btn" id="cp_keyboard_in">
+                                <img src="icon/back.svg" alt="">
+                            </button>
+                            <button type="button" class="btn" id="cp_keyboard_in">0</button>
+                            <button type="button" class="btn" id="cp_keyboard_in">00</button>
+                        </div>
+                        <div class="cp_keyboard_right">
+                            <button type="button" class="btn" id="cp_keyboard_send">送出</button>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" id="pos_modal_btn" data-bs-dismiss="modal">退出</button>
+                </div>
+              </div>
+            </div>
+          </div>
+         <!-- Modal Number-->
+         <div class="modal fade" id="exampleModal_number" tabindex="-1" aria-labelledby="pos_exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">統一編號</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="pos_modal_notic_body">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="請輸入統一編號" aria-label="請輸入統一編號" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn" id="pos_modal_btn" data-bs-dismiss="modal">退出</button>
+                </div>
+            </div>
+            </div>
+        </div>
+         <!-- Modal Discount-->
+         <div class="modal fade" id="exampleModal_info" tabindex="-1" aria-labelledby="pos_exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable modal-xl">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">會員資料</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="pos_modal_notic_body">
+                    <div class="pos_2_info">
+                        <div>
+                            <p>會員編號</p>
+                            <p>0123</p>
+                            <p>當前積分</p>
+                            <p>100</p>
+                        </div>
+                        <div>
+                            <p>會員姓名</p>
+                            <p>王小明</p>
+                            <p>折扣</p>
+                            <p>300</p>
+                        </div>
+                        <div>
+                            <p>會員類型</p>
+                            <p>一般會員</p>
+                            <p>折價券</p>
+                            <p>1</p>
+                        </div>
+                        <div>
+                            <p>會員折扣</p>
+                            <p>無</p>
+                            <p>會員電話</p>
+                            <p>0912-345-678</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn" id="pos_modal_btn" data-bs-dismiss="modal">退出</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal Discount-->
+        <div class="modal fade" id="exampleModal_discount" tabindex="-1" aria-labelledby="pos_exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">使用折價券</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="pos_modal_notic_body">
+                    <div class="pos_discount_list_modal">
+                        <button 
+                        type="button" 
+                        class="btn" 
+                        id="pos_discount_list_modal"
+                        >*全館滿6,000折600
+                        </button>
+                        <button 
+                        type="button" 
+                        class="btn" 
+                        id="pos_discount_list_modal"
+                        >*維他命C+鈣+D3發泡錠,折50元
+                        </button>
+                        <button 
+                        type="button" 
+                        class="btn" 
+                        id="pos_discount_list_modal"
+                        >*保麗淨 假牙清潔錠2入,兩盒9折
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn" id="pos_modal_btn" data-bs-dismiss="modal">送出</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal Notic-->
+        <div class="modal fade" id="exampleModalbell" tabindex="-1" aria-labelledby="pos_exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">今日通知</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="pos_modal_notic_body">
+                    <table>
+                        <tr>
+                            <th>
+                                <img src="icon/star.svg" alt="">
+                            </th>
+                            <th>今日變價通知</th>
+                        </tr>   
+                    </table>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn" id="pos_modal_btn" data-bs-dismiss="modal">退出</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        <!-- Modal person-->
+        <div class="modal fade" id="exampleModalperson" tabindex="-1" aria-labelledby="pos_exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">個人資訊</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="pos_modal_notic_body">
+                    <a href="">
+                        <button type="button" class="btn" id="pos_modal_btn_bar">標籤設定</button>
+                    </a>
+                    <a href="">
+                        <button type="button" class="btn" id="pos_modal_btn_bar">發票設定</button>
+                    </a>
+                    <a href="pos_return_self.html">
+                        <button type="button" class="btn" id="pos_modal_btn_bar">銷貨明細</button>
+                    </a>
+                    <a href="pos_reconcile.html">
+                        <button 
+                    type="button" class="btn" id="pos_modal_btn_bar">收銀對帳
+                    </button>
+                    </a>
+                    
+                    
+                </div>
+                <div class="modal-footer">
+                    <a href="index.html">
+                        <button type="button" class="btn " id="pos_sign_out" data-bs-dismiss="modal">登出
+                    
+                </button></a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Modal member-->
+        <div class="modal fade" id="exampleModalmember" tabindex="-1" aria-labelledby="pos_exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">
+                    會員
+                    <div class="pos_mem_search">
+                        <img src="pos_icon/search.svg" alt="" />
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="輸入姓名、電話"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                        />
+                    </div>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="pos_modal_member_body">
+                    <table>
+                        <button type="button" class="btn" id="pos_mem_info">
+                            <div>王小萌</div>
+                            <div>0912-345-678</div>
+                        </button>
+                        <button type="button" class="btn" id="pos_mem_info">
+                            <div>王小萌</div>
+                            <div>0912-345-678</div>
+                        </button>
+                        <button type="button" class="btn" id="pos_mem_info">
+                            <div>王小萌</div>
+                            <div>0912-345-678</div>
+                        </button>
+                        <button type="button" class="btn" id="pos_mem_info">
+                            <div>王小萌</div>
+                            <div>0912-345-678</div>
+                        </button>
+                        <button type="button" class="btn" id="pos_mem_info">
+                            <div>王小萌</div>
+                            <div>0912-345-678</div>
+                        </button>
+                        <button type="button" class="btn" id="pos_mem_info">
+                            <div>王小萌</div>
+                            <div>0912-345-678</div>
+                        </button>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn" id="pos_modal_btn" data-bs-dismiss="modal">送出</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal SaveOrder-->
+        <div class="modal fade" id="exampleModal_saveorder" tabindex="-1" aria-labelledby="pos_exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">注意</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="pos_modal_notic_body">
+                    <table>
+                        <tr>
+                            <th>是否儲存目前訂單？</th>
+                        </tr>   
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <a href="pos_home.html">
+                        <button type="button" class="btn" id="pos_modal_btn" data-bs-dismiss="modal">
+                            儲存</button>
+                    </a>
+                    
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <script>
+            var popoverTriggerList = [].slice.call(
+                document.querySelectorAll('[data-bs-toggle="popover"]')
+            );
+            var popoverList = popoverTriggerList.map(function (
+                popoverTriggerEl
+            ) {
+                return new bootstrap.Popover(popoverTriggerEl);
+            });
+        </script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+            })
+        </script>
+    </body>
+</html>

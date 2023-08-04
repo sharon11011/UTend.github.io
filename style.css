@@ -3755,6 +3755,8 @@ tr {
     width: 200px;
     border-radius: 20px;
     font-size: 25px;
+    background-color: #ff9b9b;
+    color: white;
 }
 .daily_block {
     display: grid;
