@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous"
+        />
+        <title>自我查核檢查表</title>
+    </head>
+    <body>
+        <div class="his">
+            <button
+        class="btn"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasWithBackdrop"
+        aria-controls="offcanvasWithBackdrop"
+        id="offcanvas-button"
+      >
+        <div class="s-nav-member" style="background-color: #288289;">
+          <img src="icon/member.svg" alt="" style="filter: brightness(10);"/>
+        </div>
+        <div class="s-nav-onsite">
+          <p><img src="icon/home.svg" alt=""></p>
+        </div>
+        <div class="s-nav-wait">
+          <p>待</p>
+        </div>
+        <div class="s-nav-drug">
+          <p>調</p>
+        </div>
+        <div class="s-nav-message">
+          <img src="icon/message.svg" alt="" />
+        </div>
+        <div class="s-nav-his">
+          <p>健</p>
+        </div>
+      </button>
+
+      <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="offcanvasWithBackdrop"
+        aria-labelledby="offcanvasWithBackdropLabel"
+      >
+        <div class="offcanvas-body">
+          <a href="his-personal.html" class="nav-member" style="background-color: #288289;color: white;">
+            <img src="icon/member.svg" alt="" style="filter: brightness(10);"/>
+            <p>Test0123</p>
+          </a>
+          <a
+            href="#"
+            class="nav-onsite"
+            
+            ><img src="icon/home.svg" alt="">HOME</a
+          >
+          <a href="his-progress.html">待處理</a>
+          <a href="his-dispensing.html">調藥</a>
+          <a href="his-message.html" class="nav-message">
+            <img src="icon/message.svg" alt="" />
+            <p>編輯訊息</p>
+          </a>
+          <a href="his-declare.html">健保申報</a>
+        </div>
+      </div>
+
+      <!-- 儀表板 -->
+      <div class="dashboard-out-self-check rigth-out daily-dashboard">
+        <div class="daily-title">
+           
+            <div class="daily-left">
+                <a href="his-declare.html">
+                    <img src="icon/back.svg" alt="">
+                </a>
+                <h3>自我查核檢查表</h3>
+            </div>
+        </div>
+        <!-- 表格 -->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn position-relative" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="check_bgc">
+          藥品取得及貯存
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            8
+            <span class="visually-hidden">unread messages</span>
+          </span>
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content" id="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel"> 藥品取得及貯存</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="self_check_title">
+                  1.醫療機構或藥局應就其所調劑藥品之來源憑證及其他相關文件、資料，並至少保存三年。
+                  <span class="text_red">前項文件、資料，得以電子化方式保存。</span>
+                  (第十三條)
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  以書面或電子化保存藥品來源憑證。
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  資料保存至少三年憑證內容應包括：收貨日期或批號、藥品名稱及數量、供應者名稱及聯繫方式、收貨機構名稱。憑證形式可包括：銷貨單、出貨單、訂購單、物流出貨紀錄、訂單驗收作業等。
+                </p>
+                <p class="self_check_title">
+                  2.藥品應依貯存條件存放，避免光線直接照射，並有防鼠、防蟲措施。（第十四條）
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  藥品依貯存條件存放
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  避免受到光線直接照射
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  已有防鼠、防蟲措施。
+                </p>
+                <p class="self_check_title">
+                  3.需冷藏或冷凍貯存之藥品，應每日監測及記錄藥品之貯存溫度，並製作紀錄，
+                  <span class="text_red">前項紀錄，醫療機構或藥局應至少保存一年，並以書面或電子化方式為之。</span>
+                  （第十四條）需冷藏或冷凍貯存之藥品
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  每日監測及記錄貯存溫度。
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  <span class="text_red">書面或電子化</span>溫度紀錄保存至少一年。
+                </p>
+                <p class="self_check_title">
+                  4.疫苗、血液製劑
+                  <span class="text_red">或其他經中央衡生主管機關公告</span>
+                  之特殊藥品，應分層分櫃保存，並明顯標示藥品名稱。（第二十五條）
+                </p>
+                <p>疫苗、血液製劑<span class="text_red">或其他經中央街生主管機關公告之特殊藥品</span></p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  分品項储放(如：置於不同層或用小容器分開)。
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  明顯標示藥品名稱。
+                </p>
+                <p class="self_check_title">
+                  5.對於已變質、逾保存期限或下架回收之藥品，應予標示並明顯區隔置放，依法處理。
+                  (第十七條)
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  標示變質、逾保存期限或下架回收之藥品。
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  與其餘藥品明顯區隔置放。
+                </p>
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                <button type="button" class="btn" id="btn-green">儲存</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <button type="button" class="btn position-relative" data-bs-toggle="modal" data-bs-target="#staticBackdrop_1" id="check_bgc" >
+          藥品調製
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            20
+            <span class="visually-hidden">unread messages</span>
+          </span>
+        </button>
+       <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop_1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content" id="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">藥品調製</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="self_check_title">
+                  1.<span class="text_red">醫療機構或藥局</span>藥品調製之品項，不得與<span class="text_red">領有藥品許可證之製劑</span>具相同有效成分、含量及劑型。但有下列情形之一，並經醫師臨床評估有必要者，不在限：
+                  <br>
+                  一、經中央衛生主管機關公告短缺且建議調製者。
+                  <br>
+                  二、奥領有漿品許可證之製劑具相同有效成分、舍量及劑型，而不含防腐劑。
+                  <br>
+                  三、依斷層掃描用正子放射同位素優良調劑作業準則，由醫瘵機構調製之斷層掃描用正子放射同位素。
+                  (第二十七條)
+                  <br>
+                  檠品調製品項
+                </p>
+
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  未與<span class="text_red">領有藥品許可證</span>之製劑具相同有效
+                  之一，並經醫師臨床評估有必要者，不在此限：
+                  成分、含量及劑型。或符合下列條件：(第一項必勾選；第二至四項擇一勾選即符合)
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  資料保存至少三年憑證內容應包括：收貨日期或批號、藥品名稱及數量、供應者名稱及聯繫方式、收貨機構名稱。憑證形式可包括：銷貨單、出貨單、訂購單、物流出貨紀錄、訂單驗收作業等。
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  經醫師臨床評估有必要。
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  經中央衛生主管機關公告短缺且建議調製。
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  與<span class="text_red">領有藥品許可證</span>之製劑具相同有效成
+                  （第二十七條）
+                  分、含量及劑型，而不舍防腐劑。
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  依斷層掃描用正子放射同位素優良調劑
+                  作業準則，<span class="text_red">由醫療機構</span>調製之正子放射同
+                  位素。
+                </p>
+                
+                <p class="self_check_title">
+                  2.<span class="text_red">醫療機構或樂局調製类品，您使用經甲哭街生专官做朋你 仁么君
+                  淮製造或輪入之製劑為之。前項調製，符合中央衛生主管
+                  機關公告之下列事項者，其調製來源，得不以製劑為限：
+                  <br>
+                  一、調製藥品之名稱。
+                  <br>
+                  二，有效成分之名稱、含量及品質規範。
+                  <br>
+                  三、調製人員及環境規範。
+                  前項不以製劑調製者，醫療機構或藥局</span>，應每年向中央
+                  街生主管機關申報各品項之調製數量。（第二十八條）
+                  <br>
+                  不以製劑調製品項應符合下列條件：
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  属中央衛生主管機關公告品項。
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  每年向中央街生主管機關申報調製品項及數量。
+                </p>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                <button type="button" class="btn" id="btn-green">儲存</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <button type="button" class="btn position-relative" data-bs-toggle="modal" data-bs-target="#staticBackdrop_2" id="check_bgc">
+          核醫放射性藥品調劑
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            12
+            <span class="visually-hidden">unread messages</span>
+          </span>
+        </button>
+       <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop_2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content" id="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">核醫放射性藥品調劑</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="self_check_title">
+                  1.<span class="text_red">醫療機構或藥局調劑</span>核醫放射性藥品，<span class="text_red">其人員、物質及設拖設備，應符合游離輻射防護法之規定。</span>(第四十二條)
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  醫療機構或藥局調劑己<span class="text_red">依游離輻射防護法</span>
+                  取得行政院原子能委員會核發之放射性物質使用許可證。
+                  <span class="text_red">核醫放射性藥品調劑人員資格(擇一勾選即符合)</span>
+                </p>
+                
+                <p class="self_check_title">
+                  2.<span class="text_red">醫療棧構戎藥局</span>調劑核醫放射性藥品<span class="text_red">應訂定標準
+                  作業程序。
+                  前項標準作業程序，其內容應包括下列事項：
+                  一、調劑之步驟。
+                  二、調劑正確性之確認。
+                  調劑紀錄之製作及保存。</span>（第四十三條）
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  已訂定核醫放射性藥品調劑相關標準作業程序。其內容已包括：
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  <span class="text_red">調劑作業之步聚。</span>
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  <span class="text_red">調劑作業正確性之確認。</span>
+                </p>
+                <p class="checkbox_text">
+                  <input type="checkbox" id="self_check_checkbox">
+                  <span class="text_red">調劑作業紀錄之製作及保存。</span>
+                </p>
+              
+
+              <p class="self_check_title">
+                3.<span class="text_red">藥事人員</span>調劑核醫放射性藥品，<span class="text_red">應依前條第一項之程序為之，並製作紀錄</span>；紀錄內容應包括下列事
+                項：
+                <span class="text_red">
+                一、調劑藥事人員姓名。
+                二、調劑日期。
+                三、用於調劑之核種名稱及放射活度。
+                四、完成調劑之核醫放射性藥品之放射活度及数
+                量。</span>
+                前項紀錄，醫療機構或藥局應至少保存三年，
+                <br>
+                <span class="text_red">依標準作業程序執行藥品調製作業。調製紀錄己包括：</span>
+              </p>
+              <p class="checkbox_text">
+                <input type="checkbox" id="self_check_checkbox">
+                調製藥事人員姓名。
+              </p>
+              <p class="checkbox_text">
+                <input type="checkbox" id="self_check_checkbox">
+                調製日期。
+              </p>
+              <p class="checkbox_text">
+                <input type="checkbox" id="self_check_checkbox">
+                用於調製之核種名稱及放射活度。
+              </p>
+              <p class="checkbox_text">
+                <input type="checkbox" id="self_check_checkbox">
+                完成調製之核醫放射性藥品之核種名稱及放射活度。
+              </p>
+              <p class="checkbox_text">
+                <input type="checkbox" id="self_check_checkbox">
+                書面或電子化之調製紀錄保存至少三年。
+              </p>
+            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                <button type="button" class="btn" id="btn-green">儲存</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+
+
+
+
+
+       <script>var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+          return new bootstrap.Popover(popoverTriggerEl)
+        })
+        </script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

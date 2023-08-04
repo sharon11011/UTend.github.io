@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: white">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+
+        <title>處方箋紀錄</title>
+    </head>
+    <body>
+        <!-- 處方箋 -->
+
+        <div class="rx" class="animate__animated animate__bounce">
+            <div class="rx_top">
+                <div class="rx_top_left">
+                    <!-- line1 -->
+                    <div class="rx_top_left_line1">
+                        <!-- Button trigger modal -->
+
+                        <a href="his-record.html">
+                            <button type="button" class="btn" id="rx_back">
+                                <img src="icon/back.svg" alt="" />
+                            </button>
+                        </a>
+                        <div>
+                            <p class="rx_top_left_line1_id_state rx_gray">
+                                插入IC/QRcode
+                            </p>
+                        </div>
+
+                        <div class="rx_top_left_line1_id rx_gray">
+                            <p>身分證字號</p>
+                            <p>|</p>
+                            <p>A2*****789</p>
+                        </div>
+                        <div class="rx_top_left_line1_id rx_gray">
+                            <p>流水號</p>
+                            <p>|</p>
+                            <p>1234</p>
+                        </div>
+                    </div>
+                    <!-- line2 -->
+                    <div class="rx_top_left_line2_1">
+                        <div class="rx_gray">
+                            <p class="rx_top_left_line2_name">王小明</p>
+                        </div>
+                        <div class="bgc_gray">
+                            <p>1980(69)年12月03日</p>
+                        </div>
+
+                        <p id="rx_top_left_line2_sex_1">女</p>
+                        <div class="rx_top_left_line2_date rx_gray">
+                            <p>就醫日</p>
+                            <p>|</p>
+                            <p>1120101</p>
+                        </div>
+                        <div class="rx_top_left_line2_date2 rx_gray">
+                            <p>調劑日</p>
+                            <p>|</p>
+                            <p>1120102</p>
+                        </div>
+                    </div>
+                    <!-- line3 -->
+                    <div class="rx_top_left_line3">
+                        <div class="rx_top_left_line3_left">
+                            <button class="btn" role="button" id="rx_hos_gray">
+                                醫療院所
+                                <img src="icon/down.svg" alt="" />
+                            </button>
+                            <div class="rx_block_hospital">
+                                <p>0501110514</p>
+                                <p>三軍總醫院附設民眾診療服務處</p>
+                            </div>
+                            <button type="button" class="btn" id="btn_gray_rx">
+                                給付類別
+                                <img
+                                    src="icon/down.svg"
+                                    alt=""
+                                    style="height: 28px"
+                                />
+                            </button>
+                            <!-- Modal -->
+                            <div
+                                class="modal fade"
+                                id="exampleModal_001"
+                                tabindex="-1"
+                                aria-labelledby="exampleModalLabel"
+                                aria-hidden="true"
+                            >
+                                <div
+                                    class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
+                                >
+                                    <div
+                                        class="modal-content"
+                                        id="modal-content"
+                                    >
+                                        <div class="modal-header">
+                                            <h5
+                                                class="modal-title"
+                                                id="exampleModalLabel"
+                                            >
+                                                給付類別
+                                            </h5>
+                                            <button
+                                                type="button"
+                                                class="btn-close"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"
+                                            ></button>
+                                        </div>
+                                        <div
+                                            class="modal-body"
+                                            id="notic-footer"
+                                        >
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                1-職業傷害
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                2-職業病
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                3-普通傷害
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                4-小兒科
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                5-婦產科
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                6-骨科
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                7-神經外科
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                8-泌尿科
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                9-耳鼻喉科
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                10-眼科
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                11-皮膚科
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                12-神經科
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                13-復健科
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                14-神經外科
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                15-整型外科
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                22-急診醫學科
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                23-結核科
+                                            </button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button
+                                                type="button"
+                                                class="btn"
+                                                id="btn-green-rx"
+                                            >
+                                                送出
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn" id="btn_gray_rx">
+                                新增備註
+                            </button>
+                        </div>
+
+                        <div class="rx_top_left_line3_right">
+                            <button type="button" class="btn" id="btn_gray_rx">
+                                科別
+                                <img
+                                    src="icon/down.svg"
+                                    alt=""
+                                    style="height: 28px"
+                                />
+                            </button>
+
+                            <div>
+                                <p>給藥日份</p>
+                            </div>
+                            <input
+                                type="number"
+                                role="button"
+                                id="rx_btn_2_gray"
+                                disabled
+                                value="28"
+                                type="number"
+                            />
+
+                            <button type="button" class="btn" id="btn_gray_rx">
+                                就醫序號
+                                <img
+                                    src="icon/down.svg"
+                                    alt=""
+                                    style="height: 28px"
+                                />
+                            </button>
+
+                            <div>
+                                <p>可調次數</p>
+                            </div>
+                            <input
+                                type="number"
+                                role="button"
+                                id="rx_btn_2_gray"
+                                disabled
+                                value="2"
+                            />
+                            <button type="button" class="btn" id="btn_gray_rx">
+                                原就醫序
+                                <img
+                                    src="icon/down.svg"
+                                    alt=""
+                                    style="height: 28px"
+                                />
+                            </button>
+                            <!-- Modal -->
+                            <div
+                                class="modal fade"
+                                id="exampleModal_003"
+                                tabindex="-1"
+                                aria-labelledby="exampleModalLabel"
+                                aria-hidden="true"
+                            >
+                                <div
+                                    class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
+                                >
+                                    <div
+                                        class="modal-content"
+                                        id="modal-content"
+                                    >
+                                        <div class="modal-header">
+                                            <h5
+                                                class="modal-title"
+                                                id="exampleModalLabel"
+                                            >
+                                                原就醫序
+                                            </h5>
+                                            <button
+                                                type="button"
+                                                class="btn-close"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"
+                                            ></button>
+                                        </div>
+                                        <div
+                                            class="modal-body"
+                                            id="notic-footer"
+                                        >
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                1-職業傷害
+                                            </button>
+                                            <button
+                                                class="btn"
+                                                id="btn-green-notic"
+                                            >
+                                                2-職業病
+                                            </button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button
+                                                type="button"
+                                                class="btn"
+                                                id="btn-green-rx"
+                                            >
+                                                送出
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p>序號</p>
+                            </div>
+
+                            <input
+                                type="number"
+                                role="button"
+                                id="rx_btn_2_gray"
+                                disabled
+                                value="03"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="rx_top_middle">
+                    <button type="button" class="btn" id="btn_gray_rx">
+                        申報類別
+                        <img src="icon/down.svg" alt="" style="height: 28px" />
+                    </button>
+                    <button type="button" class="btn" id="btn_gray_rx">
+                        其他診療
+                        <img src="icon/down.svg" alt="" style="height: 28px" />
+                    </button>
+
+                    <button type="button" class="btn" id="btn_gray_rx">
+                        案件分類
+                        <img src="icon/down.svg" alt="" style="height: 28px" />
+                    </button>
+                    <button type="button" class="btn" id="btn_gray_rx">
+                        藥事服務
+                        <img src="icon/down.svg" alt="" style="height: 28px" />
+                    </button>
+                    <button type="button" class="btn" id="btn_gray_rx">
+                        醫院案件
+                        <img src="icon/down.svg" alt="" style="height: 28px" />
+                    </button>
+
+                    <button class="btn" id="btn_gray_rx_01">
+                        醫師<br />0501110514
+                    </button>
+                    <button type="button" class="btn" id="btn_gray_rx">
+                        特定治療
+                        <img src="icon/down.svg" alt="" style="height: 28px" />
+                    </button>
+
+                    <div class="cloud_upload_img">
+                        <button class="btn cloud" id="btn_gray_rx">
+                            <a target="_blank">雲端</a>
+                        </button>
+
+                        <button class="btn upload_img" id="btn_gray_rx">
+                            上傳圖片
+                        </button>
+                    </div>
+                    <div class="rx_top_middle_text">
+                        更新時間 | 112/01/18 09:32
+                    </div>
+                    <div class="rx_top_middle_text">0001 | 彭秋茹</div>
+                </div>
+
+                <div class="rx_top_right">
+                    <div class="hint">
+                        <div id="btn_gray_rx_02">今過1</div>
+                        <div id="btn_gray_rx_02">1.5%</div>
+                        <button type="button" class="btn" id="btn_gray_rx">
+                            就醫識別
+                        </button>
+                    </div>
+                    <div class="icd_code icd_code_btn">
+                        <button class="btn" id="btn_gray_rx">疾病代碼</button>
+
+                        <p>N401攝護腺增大 *Enlarged prostate</p>
+                        <p>N401攝護腺增大 *Enlarged prostate</p>
+                        <p>N401攝護腺增大 *Enlarged prostate</p>
+                        <button
+                            class="btn"
+                            data-bs-toggle="modal"
+                            href="#exampleModal2"
+                            role="button"
+                            id="rx_gray_img"
+                        >
+                            <img src="icon/add_c.svg" alt="" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="rx_middle">
+                <div class="rx_middle_title">
+                    <div>藥品代號</div>
+                    <div>藥品名稱</div>
+                    <div>用量</div>
+                    <div>天</div>
+                    <div>用頻</div>
+                    <div>途徑</div>
+                    <div>總量</div>
+                    <div>單價</div>
+                    <div>Cost</div>
+                    <div>金額</div>
+                    <div>庫存</div>
+                    <div>儲位</div>
+                    <div>備註</div>
+                    <div class="checkbox_title">給藥</div>
+                </div>
+                <div class="rx_middle_title_out">
+                    <button type="button" class="btn">
+                        <div class="rx_middle_title_1">
+                            <div>A001217100</div>
+                            <div>維靜錠</div>
+                            <div>1</div>
+                            <div>28</div>
+                            <div>QD</div>
+                            <div>PO</div>
+                            <div>28</div>
+                            <div>3.45</div>
+                            <div>3.3</div>
+                            <div>97</div>
+                            <div>+10</div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </button>
+                    <div id="form-checkbox"></div>
+                </div>
+                <div class="rx_middle_title_out">
+                    <button type="button" class="btn">
+                        <div class="rx_middle_title_1">
+                            <div>A001217100</div>
+                            <div>維靜錠</div>
+                            <div>1</div>
+                            <div>28</div>
+                            <div>QD</div>
+                            <div>PO</div>
+                            <div>28</div>
+                            <div>3.45</div>
+                            <div>3.3</div>
+                            <div>97</div>
+                            <div>+10</div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </button>
+                    <div id="form-checkbox"></div>
+                </div>
+                <div class="rx_middle_title_out">
+                    <button type="button" class="btn">
+                        <div class="rx_middle_title_1">
+                            <div>A001217100</div>
+                            <div>維靜錠</div>
+                            <div>1</div>
+                            <div>28</div>
+                            <div>QD</div>
+                            <div>PO</div>
+                            <div>28</div>
+                            <div>3.45</div>
+                            <div>3.3</div>
+                            <div>97</div>
+                            <div>+10</div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </button>
+                    <div id="form-checkbox"></div>
+                </div>
+                <div class="rx_middle_title_out">
+                    <button type="button" class="btn">
+                        <div class="rx_middle_title_1">
+                            <div>A001217100</div>
+                            <div>維靜錠</div>
+                            <div>1</div>
+                            <div>28</div>
+                            <div>QD</div>
+                            <div>PO</div>
+                            <div>28</div>
+                            <div>3.45</div>
+                            <div>3.3</div>
+                            <div>97</div>
+                            <div>+10</div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </button>
+                    <div id="form-checkbox"></div>
+                </div>
+                <div class="rx_middle_title_out">
+                    <button type="button" class="btn">
+                        <div class="rx_middle_title_1">
+                            <div>A001217100</div>
+                            <div>維靜錠</div>
+                            <div>1</div>
+                            <div>28</div>
+                            <div>QD</div>
+                            <div>PO</div>
+                            <div>28</div>
+                            <div>3.45</div>
+                            <div>3.3</div>
+                            <div>97</div>
+                            <div>+10</div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </button>
+                    <div id="form-checkbox"></div>
+                </div>
+                <div class="rx_middle_title_out">
+                    <button type="button" class="btn">
+                        <div class="rx_middle_title_1">
+                            <div>A001217100</div>
+                            <div>維靜錠</div>
+                            <div>1</div>
+                            <div>28</div>
+                            <div>QD</div>
+                            <div>PO</div>
+                            <div>28</div>
+                            <div>3.45</div>
+                            <div>3.3</div>
+                            <div>97</div>
+                            <div>+10</div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </button>
+                    <div id="form-checkbox"></div>
+                </div>
+
+                <!-- 藥品替換 Modal -->
+                <div
+                    class="modal fade"
+                    id="exampleModal-line"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                >
+                    <div
+                        class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable"
+                    >
+                        <div class="modal-content" id="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                    藥品替換
+                                </h5>
+                                <input
+                                    class="form-control me-2"
+                                    id="progress-input-rx"
+                                    type="search"
+                                    placeholder="搜尋"
+                                    aria-label="Search"
+                                />
+                                <button
+                                    class="btn progress-btn"
+                                    id="btn-green-rx"
+                                    type="submit"
+                                >
+                                    搜尋
+                                </button>
+                                <button
+                                    class="btn progress-btn"
+                                    id="btn-green-sam"
+                                    type="submit"
+                                >
+                                    同成份
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                ></button>
+                            </div>
+                            <div class="modal-body" id="change_drug">
+                                <button type="button" class="btn" id="button">
+                                    <div class="rx_middle_title_inn">
+                                        <div>A001217100</div>
+                                        <div>維靜錠</div>
+                                        <div>1</div>
+                                        <div>28</div>
+                                        <div>QD</div>
+                                        <div>PO</div>
+                                        <div>28</div>
+                                        <div>3.45</div>
+                                        <div>3.3</div>
+                                        <div>97</div>
+                                        <div>+10</div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </button>
+                                <button type="button" class="btn" id="button">
+                                    <div class="rx_middle_title_inn">
+                                        <div>A001217100</div>
+                                        <div>維靜錠</div>
+                                        <div>1</div>
+                                        <div>28</div>
+                                        <div>QD</div>
+                                        <div>PO</div>
+                                        <div>28</div>
+                                        <div>3.45</div>
+                                        <div>3.3</div>
+                                        <div>97</div>
+                                        <div>+10</div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </button>
+                                <button type="button" class="btn" id="button">
+                                    <div class="rx_middle_title_inn">
+                                        <div>A001217100</div>
+                                        <div>維靜錠</div>
+                                        <div>1</div>
+                                        <div>28</div>
+                                        <div>QD</div>
+                                        <div>PO</div>
+                                        <div>28</div>
+                                        <div>3.45</div>
+                                        <div>3.3</div>
+                                        <div>97</div>
+                                        <div>+10</div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </button>
+                                <button type="button" class="btn" id="button">
+                                    <div class="rx_middle_title_inn">
+                                        <div>A001217100</div>
+                                        <div>維靜錠</div>
+                                        <div>1</div>
+                                        <div>28</div>
+                                        <div>QD</div>
+                                        <div>PO</div>
+                                        <div>28</div>
+                                        <div>3.45</div>
+                                        <div>3.3</div>
+                                        <div>97</div>
+                                        <div>+10</div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </button>
+                                <button type="button" class="btn" id="button">
+                                    <div class="rx_middle_title_inn">
+                                        <div>A001217100</div>
+                                        <div>維靜錠</div>
+                                        <div>1</div>
+                                        <div>28</div>
+                                        <div>QD</div>
+                                        <div>PO</div>
+                                        <div>28</div>
+                                        <div>3.45</div>
+                                        <div>3.3</div>
+                                        <div>97</div>
+                                        <div>+10</div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </button>
+                                <button type="button" class="btn" id="button">
+                                    <div class="rx_middle_title_inn">
+                                        <div>A001217100</div>
+                                        <div>維靜錠</div>
+                                        <div>1</div>
+                                        <div>28</div>
+                                        <div>QD</div>
+                                        <div>PO</div>
+                                        <div>28</div>
+                                        <div>3.45</div>
+                                        <div>3.3</div>
+                                        <div>97</div>
+                                        <div>+10</div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </button>
+                                <button type="button" class="btn" id="button">
+                                    <div class="rx_middle_title_inn">
+                                        <div>A001217100</div>
+                                        <div>維靜錠</div>
+                                        <div>1</div>
+                                        <div>28</div>
+                                        <div>QD</div>
+                                        <div>PO</div>
+                                        <div>28</div>
+                                        <div>3.45</div>
+                                        <div>3.3</div>
+                                        <div>97</div>
+                                        <div>+10</div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </button>
+                                <button type="button" class="btn" id="button">
+                                    <div class="rx_middle_title_inn">
+                                        <div>A001217100</div>
+                                        <div>維靜錠</div>
+                                        <div>1</div>
+                                        <div>28</div>
+                                        <div>QD</div>
+                                        <div>PO</div>
+                                        <div>28</div>
+                                        <div>3.45</div>
+                                        <div>3.3</div>
+                                        <div>97</div>
+                                        <div>+10</div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </button>
+                                <button type="button" class="btn" id="button">
+                                    <div class="rx_middle_title_inn">
+                                        <div>A001217100</div>
+                                        <div>維靜錠</div>
+                                        <div>1</div>
+                                        <div>28</div>
+                                        <div>QD</div>
+                                        <div>PO</div>
+                                        <div>28</div>
+                                        <div>3.45</div>
+                                        <div>3.3</div>
+                                        <div>97</div>
+                                        <div>+10</div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </button>
+                                <button type="button" class="btn" id="button">
+                                    <div class="rx_middle_title_inn">
+                                        <div>A001217100</div>
+                                        <div>維靜錠</div>
+                                        <div>1</div>
+                                        <div>28</div>
+                                        <div>QD</div>
+                                        <div>PO</div>
+                                        <div>28</div>
+                                        <div>3.45</div>
+                                        <div>3.3</div>
+                                        <div>97</div>
+                                        <div>+10</div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </button>
+
+                                <button type="button" class="btn" id="button">
+                                    <div class="rx_middle_title_inn">
+                                        <div>A001217100</div>
+                                        <div>維靜錠</div>
+                                        <div>1</div>
+                                        <div>28</div>
+                                        <div>QD</div>
+                                        <div>PO</div>
+                                        <div>28</div>
+                                        <div>3.45</div>
+                                        <div>3.3</div>
+                                        <div>97</div>
+                                        <div>+10</div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </button>
+                                <button type="button" class="btn" id="button">
+                                    <div class="rx_middle_title_inn">
+                                        <div>A001217100</div>
+                                        <div>維靜錠</div>
+                                        <div>1</div>
+                                        <div>28</div>
+                                        <div>QD</div>
+                                        <div>PO</div>
+                                        <div>28</div>
+                                        <div>3.45</div>
+                                        <div>3.3</div>
+                                        <div>97</div>
+                                        <div>+10</div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="modal-footer">
+                                <button
+                                    type="button"
+                                    class="btn"
+                                    id="btn-green-rx"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                >
+                                    送出
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 增加藥品 -->
+                <button
+                    type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal-3"
+                    id="rx_middle_title_add_gray"
+                >
+                    <img src="icon/add.svg" alt="" />
+                </button>
+            </div>
+            <div class="rx_down">
+                <div class="rx_down_left">
+                    <button type="button" class="btn" id="btn_gray_rx">
+                        部分負擔
+                        <img src="icon/down.svg" alt="" style="height: 28px" />
+                    </button>
+                    <div class="rx_down_left_block" id="btn_gray_rx_02">
+                        <p>藥價</p>
+                        <p>|</p>
+                        <p>0</p>
+                    </div>
+                    <div class="rx_down_left_block" id="btn_gray_rx_02">
+                        <p>特材</p>
+                        <p>|</p>
+                        <p>0</p>
+                    </div>
+                    <div class="rx_down_left_block_1 rx_gray"></div>
+                    <div class="rx_down_left_block_1 rx_gray"></div>
+                    <div class="rx_down_left_block_1 rx_gray"></div>
+                    <div class="rx_down_left_block rx_gray">
+                        <p>合計</p>
+                        <p>|</p>
+                        <p>0</p>
+                    </div>
+                    <div class="rx_down_left_block" id="btn_gray_rx_02">
+                        <p>自費</p>
+                        <p>|</p>
+                        <p>0</p>
+                    </div>
+                    <div class="rx_down_left_block_y" id="btn_gray_rx_02">
+                        <p>申請額</p>
+                        <p>|</p>
+                        <p>0</p>
+                    </div>
+                </div>
+                <div class="rx_down_right">
+                    <button type="button" class="btn" id="rx_gray_upload">
+                        上傳並列印藥單
+                    </button>
+                    <button type="button" class="btn" id="rx_gray_cash">
+                        部分負擔 0元
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--疾病代碼 Modal -->
+        <div
+            class="modal fade"
+            id="exampleModal2"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div
+                class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable"
+            >
+                <div class="modal-content" id="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            疾病代碼
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="disease_title">
+                            <div>疾病編號：</div>
+                            <input type="text" />
+                            <div>分類名稱：</div>
+                            <input type="text" />
+                            <button type="button" class="btn" id="btn-green-rx">
+                                <a
+                                    target="_blank"
+                                    href="https://www.nhi.gov.tw/"
+                                    style="color: white; text-decoration: none"
+                                    >代碼查詢</a
+                                >
+                            </button>
+                        </div>
+                        <div class="disease_title_2">
+                            <div>疾病分類</div>
+                            <div>名稱</div>
+                            <div>ICD9</div>
+                            <div>不能申</div>
+                        </div>
+                        <button type="button" class="btn" id="disease_inn">
+                            <div>001</div>
+                            <div>霍亂（虎烈拉）</div>
+                            <div></div>
+                            <div>N</div>
+                        </button>
+                        <button type="button" class="btn" id="disease_inn">
+                            <div>0010</div>
+                            <div>霍亂弧菌所致者</div>
+                            <div></div>
+                            <div>N</div>
+                        </button>
+                        <button type="button" class="btn" id="disease_inn">
+                            <div>0010</div>
+                            <div>衣爾托霍亂弧菌所致者</div>
+                            <div></div>
+                            <div>N</div>
+                        </button>
+                        <button type="button" class="btn" id="disease_inn">
+                            <div>0010</div>
+                            <div>霍亂，未明示者</div>
+                            <div></div>
+                            <div>N</div>
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" id="btn-green-rx">
+                            送出
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div
+            class="modal fade"
+            id="exampleModal_code"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content" id="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            手動輸入/掃描 <img src="icon/sc.svg" alt="" />
+                            就醫識別碼輸入(長度20字，排除英文字母IO)
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body" id="modal-body-code">
+                        <input type="text" name="" id="" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" id="btn-green-rx">
+                            確認
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div
+            class="modal fade"
+            id="exampleModal-b"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" id="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">是否儲存後離開？</div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn"
+                            id="btn-gray"
+                            data-bs-dismiss="modal"
+                        >
+                            取消
+                        </button>
+                        <button type="button" class="btn" id="btn-green">
+                            <a
+                                href="his-personal_info.html"
+                                style="text-decoration: none; color: white"
+                            >
+                                儲存
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div
+            class="modal fade"
+            id="exampleModal-save"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" id="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body" style="text-align: center">
+                        儲存成功!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" id="btn-green">
+                            <a
+                                href="his-personal_info.html"
+                                style="text-decoration: none; color: white"
+                            >
+                                退出
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var popoverTriggerList = [].slice.call(
+                document.querySelectorAll('[data-bs-toggle="popover"]')
+            );
+            var popoverList = popoverTriggerList.map(function (
+                popoverTriggerEl
+            ) {
+                return new bootstrap.Popover(popoverTriggerEl);
+            });
+        </script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

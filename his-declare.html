@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous"
+        />
+        <title>健保申報</title>
+    </head>
+    <body>
+        <div class="his">
+            <button
+        class="btn"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasWithBackdrop"
+        aria-controls="offcanvasWithBackdrop"
+        id="offcanvas-button"
+      >
+        <div class="s-nav-member">
+          <img src="icon/member.svg" alt=""/>
+        </div>
+        <div class="s-nav-onsite">
+          <img src="icon/home.svg" alt="">
+        </div>
+        <div class="s-nav-wait">
+          <p>待</p>
+        </div>
+        <div class="s-nav-drug">
+          <p>調</p>
+        </div>
+        <div class="s-nav-message">
+          <img src="icon/message.svg" alt="" />
+        </div>
+        <div class="s-nav-his" style="background-color: #288289; color: white;">
+          <p>健</p>
+        </div>
+      </button>
+
+      <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="offcanvasWithBackdrop"
+        aria-labelledby="offcanvasWithBackdropLabel"
+      >
+        <div class="offcanvas-body">
+          <a href="his-personal.html" class="nav-member">
+            <img src="icon/member.svg" alt=""/>
+            <p>Test0123</p>
+          </a>
+          <a
+            href="his-home.html"
+            class="nav-onsite"
+            
+            >
+            <img src="icon/home.svg" alt="">
+            HOME</a
+          >
+          <a href="his-progress.html">待處理</a>
+          <a href="his-dispensing.html">調藥</a>
+          <a href="his-message.html" class="nav-message">
+            <img src="icon/message.svg" alt="" />
+            <p>編輯訊息</p>
+          </a>
+          <a href="his-declare.html"  style="background-color: #288289;color: white;">健保申報</a>
+        </div>
+      </div>
+
+        <!-- 儀表板 -->
+        <div class="dashboard-out rigth-out declare-dash">
+
+          <button type="button" class="btn" id="declare-btn-green">
+            <a href="his-daily.html">每日上傳雲端藥歷</a>
+          </button>
+          <button type="button" class="btn" id="declare-btn-green">
+            <a href="his-per-month.html">每月健保申報</a>
+          </button>
+          <button type="button" class="btn" id="declare-btn-green">
+            <a href="his-record.html">調藥紀錄</a>
+          </button>
+         
+          <button type="button" class="btn" id="declare-btn-green-b">
+            <a href="his-balance.html">管制藥品收支結存</a>
+          </button>
+          <button type="button" class="btn" id="declare-btn-green-b">
+            <a href="his-temperature.html">冷藏藥品溫度計記錄表</a>
+          </button>
+          <button type="button" class="btn" id="declare-btn-green-b" data-bs-toggle="modal" data-bs-target="#exampleModal_id">
+            過卡環境檢查
+          </button>
+          <button type="button" class="btn position-relative" id="declare-btn-green-b">
+            <a href="his-self-check.html">
+              自我查核檢查表<span class="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-danger">
+                20
+                <span class="visually-hidden">unread messages</span>
+              </span>
+            </a>
+          </button>
+
+          <!-- 外部連結 Button trigger modal -->
+          <button type="button" class="btn" id="declare-btn-green-b" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            外部連結
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable ">
+              <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">外部連結</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body link-modal">
+                  <a target="_blank"  href="https://www.nhi.gov.tw/">衛生福利部中央健康保險署</a>
+                  <a target="_blank"  href="https://www.nhi.gov.tw/QueryN_New/QueryN/Query1">健保用藥品項查詢</a>
+                  <a target="_blank"  href="https://info.nhi.gov.tw/INAE2000/INAE2000S01">健保特殊材料品項網路查詢服務</a>
+                  <a target="_blank"  href="https://cdmis.fda.gov.tw/">管制藥品管理資訊系統</a>
+                  <a target="_blank"  href="https://info.nhi.gov.tw/INAE5000/INAE5001S01">支付標準查詢</a>
+                  <a target="_blank"  href="">近期法規檢視</a>
+                  <a target="_blank"  href="">國家網路藥典</a>
+                  <a target="_blank"  href="">健保服務網資訊系統（VPN）</a>
+                  <a target="_blank"  href="">健保服務網資訊系統（HTTP）</a>
+                  <a target="_blank"  href="">醫事憑證管理中心</a>
+                  <a target="_blank"  href="">ICD9/10轉碼</a>
+                  <a target="_blank"  href="">調劑準則</a>
+                  <a target="_blank"  href="">貯藥準則</a>
+
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal_id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content" id="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">過卡環境檢測</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="exampleModal_id">
+                          <!-- <img src="icon/check_loading.gif" alt=""> -->
+            
+                          <div class="loadingio-spinner-spinner-b66myqs28d5"><div class="ldio-ukdfxuzwayq">
+                            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                            </div></div>
+                          <div>健保醫療網是否暢通</div>
+
+
+                          <div class="loadingio-spinner-spinner-b66myqs28d5"><div class="ldio-ukdfxuzwayq">
+                            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                            </div></div>
+                          <div>IC讀卡機是否連線</div>
+                          
+                          <div class="loadingio-spinner-spinner-b66myqs28d5"><div class="ldio-ukdfxuzwayq">
+                            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                            </div></div>
+                          <div>安全模組是否已認證</div>
+                          <div style="color: rgb(245, 124, 124); font-size: 20px; font-weight: bold; text-align: center; margin: 10px 20px 10px 0px;">
+                            異常
+                          </div>
+                          <div>醫事人員卡是否已認證</div>
+                          <div style="color: #288289; font-size: 20px; font-weight: bold; text-align: center; margin: 10px 20px 10px 0px;">成功</div>
+                          <div>安全模組卡機構代碼是否與系統</div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+  
+                        <button type="button" class="btn" id="btn-green">送出</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous"
+        />
+        <title>HIS-HOME</title>
+    </head>
+    <body>
+        <div class="his">
+            <button
+                class="btn"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasWithBackdrop"
+                aria-controls="offcanvasWithBackdrop"
+                id="offcanvas-button"
+            >
+                <div class="s-nav-member">
+                    <img src="icon/member.svg" alt="" />
+                </div>
+                <div class="s-nav-onsite" style="background-color: #288289">
+                    <img
+                        src="icon/home.svg"
+                        alt=""
+                        style="filter: brightness(10)"
+                    />
+                </div>
+                <div class="s-nav-wait">
+                    <p>待</p>
+                </div>
+                <div class="s-nav-drug">
+                    <p>調</p>
+                </div>
+                <div class="s-nav-message">
+                    <img src="icon/message.svg" alt="" />
+                </div>
+                <div class="s-nav-his">
+                    <p>健</p>
+                </div>
+            </button>
+
+            <div
+                class="offcanvas offcanvas-start"
+                tabindex="-1"
+                id="offcanvasWithBackdrop"
+                aria-labelledby="offcanvasWithBackdropLabel"
+            >
+                <div class="offcanvas-body">
+                    <a href="his-personal.html" class="nav-member">
+                        <img src="icon/member.svg" alt="" />
+                        <p>Test0123</p>
+                    </a>
+                    <a
+                        href="his-home.html"
+                        class="nav-onsite"
+                        style="color: white; background-color: #288289"
+                    >
+                        <img
+                            src="icon/home.svg"
+                            alt=""
+                            style="filter: brightness(10)"
+                        />
+                        HOME
+                    </a>
+                    <a href="his-progress.html">待處理</a>
+                    <a href="his-dispensing.html">調藥</a>
+                    <a href="his-message.html" class="nav-message">
+                        <img src="icon/message.svg" alt="" />
+                        <p>編輯訊息</p>
+                    </a>
+                    <a href="his-declare.html">健保申報</a>
+                </div>
+            </div>
+
+            <!-- 儀表板 -->
+            <div class="dashboard-out">
+                <!-- 掃描虛擬健保卡 -->
+                <div class="dashboard-line-1">
+                    <!-- Button trigger modal -->
+                    <button
+                        type="button"
+                        class="btn"
+                        id="qrcode-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal_ic_qr"
+                    >
+                        <p>請插入IC卡或</p>
+                        <img src="icon/sc.svg" alt="" />
+                        <p>掃描虛擬健保卡</p>
+                    </button>
+                    <!-- Modal -->
+                    <div
+                        class="modal fade"
+                        id="exampleModal_ic_qr"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content" id="modal-content">
+                                <div class="modal-header">
+                                    <h5
+                                        class="modal-title"
+                                        id="exampleModalLabel"
+                                    ></h5>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="home_modal_text">
+                                        請插IC卡或掃描虛擬健保卡
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-id-num" id="dashboard-id-num">
+                        <div class="input-group mb-3">
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="請輸入身分證字號"
+                                aria-label="Recipient's username"
+                                aria-describedby="button-addon2"
+                            />
+                            <button
+                                class="btn btn-outline-secondary"
+                                type="button"
+                                id="button-addon2"
+                            >
+                                <a href="his-personal_info.html"> 送出 </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-line-2">
+                    <div class="dashboard_notify_out">
+                        <div class="notice_out">
+                            <a href="his-progress.html">
+                                <div class="notice_1">
+                                    <div class="notice_1_top">
+                                        <div id="notice_orange">提</div>
+                                        <p>未通知</p>
+                                    </div>
+                                    <div class="notice_1_b">
+                                        <p>8</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="his-progress.html">
+                                <div class="notice_2">
+                                    <p>今日通知</p>
+                                    <p>3</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="notice_out">
+                            <a href="his-progress.html">
+                                <div class="notice_1">
+                                    <div class="notice_1_top">
+                                        <div>逾</div>
+                                        <p>將逾期</p>
+                                    </div>
+                                    <div class="notice_1_b">
+                                        <p>8</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="his-progress.html">
+                                <div class="notice_2">
+                                    <p></p>
+                                    <p></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="notice_out">
+                            <a href="his-dispensing.html">
+                                <div class="notice_1">
+                                    <div class="notice_1_top">
+                                        <div id="notice_yellow">半</div>
+                                        <p>半成品</p>
+                                    </div>
+                                    <div class="notice_1_b">
+                                        <p>8</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="his-dispensing.html">
+                                <div class="notice_2">
+                                    <p></p>
+                                    <p></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="notice_out">
+                            <a href="his-dispensing.html">
+                                <div class="notice_1">
+                                    <div class="notice_1_top">
+                                        <div id="notice_yellow">調</div>
+                                        <p>未包藥</p>
+                                    </div>
+                                    <div class="notice_1_b">
+                                        <p>8</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="his-dispensing.html">
+                                <div class="notice_2">
+                                    <p></p>
+                                    <p></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="notice_out">
+                            <a href="his-dispensing.html">
+                                <div class="notice_1">
+                                    <div class="notice_1_top">
+                                        <div id="notice_yellow">欠</div>
+                                        <p>欠藥</p>
+                                    </div>
+                                    <div class="notice_1_b">
+                                        <p>8</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="his-dispensing.html">
+                                <div class="notice_2">
+                                    <p></p>
+                                    <p></p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-line-3">
+                    <!-- Button trigger modal -->
+                    <button
+                        type="button"
+                        class="btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal-notic"
+                        id="dashboard-notice-out"
+                    >
+                        <h3>公告事項</h3>
+                        <div class="dashboard-notice">
+                            <p>Accordion Item #1</p>
+                            <p>Accordion Item #2</p>
+                            <p>Accordion Item #3</p>
+                        </div>
+                    </button>
+                    <!-- Modal -->
+                    <div
+                        class="modal fade"
+                        id="exampleModal-notic"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                    >
+                        <div
+                            class="modal-dialog modal-dialog-scrollable modal-dialog-centered"
+                        >
+                            <div class="modal-content" id="modal-content">
+                                <div class="modal-header">
+                                    <h5
+                                        class="modal-title"
+                                        id="exampleModalLabel"
+                                    >
+                                        公告事項
+                                    </h5>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div
+                                        class="accordion"
+                                        id="accordionExample"
+                                    >
+                                        <div class="accordion-item">
+                                            <h2
+                                                class="accordion-header"
+                                                id="headingOne"
+                                            >
+                                                <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOne"
+                                                    aria-expanded="true"
+                                                    aria-controls="collapseOne"
+                                                >
+                                                    Accordion Item #1
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapseOne"
+                                                class="accordion-collapse collapse show"
+                                                aria-labelledby="headingOne"
+                                                data-bs-parent="#accordionExample"
+                                            >
+                                                <div class="accordion-body">
+                                                    <strong
+                                                        >This is the first
+                                                        item's accordion
+                                                        body.</strong
+                                                    >
+                                                    It is shown by default,
+                                                    until the collapse plugin
+                                                    adds the appropriate classes
+                                                    that we use to style each
+                                                    element. These classes
+                                                    control the overall
+                                                    appearance, as well as the
+                                                    showing and hiding via CSS
+                                                    transitions. You can modify
+                                                    any of this with custom CSS
+                                                    or overriding our default
+                                                    variables. It's also worth
+                                                    noting that just about any
+                                                    HTML can go within the
+                                                    <code>.accordion-body</code
+                                                    >, though the transition
+                                                    does limit overflow.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2
+                                                class="accordion-header"
+                                                id="headingTwo"
+                                            >
+                                                <button
+                                                    class="accordion-button collapsed"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseTwo"
+                                                    aria-expanded="false"
+                                                    aria-controls="collapseTwo"
+                                                >
+                                                    Accordion Item #2
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapseTwo"
+                                                class="accordion-collapse collapse"
+                                                aria-labelledby="headingTwo"
+                                                data-bs-parent="#accordionExample"
+                                            >
+                                                <div class="accordion-body">
+                                                    <strong
+                                                        >This is the second
+                                                        item's accordion
+                                                        body.</strong
+                                                    >
+                                                    It is hidden by default,
+                                                    until the collapse plugin
+                                                    adds the appropriate classes
+                                                    that we use to style each
+                                                    element. These classes
+                                                    control the overall
+                                                    appearance, as well as the
+                                                    showing and hiding via CSS
+                                                    transitions. You can modify
+                                                    any of this with custom CSS
+                                                    or overriding our default
+                                                    variables. It's also worth
+                                                    noting that just about any
+                                                    HTML can go within the
+                                                    <code>.accordion-body</code
+                                                    >, though the transition
+                                                    does limit overflow.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2
+                                                class="accordion-header"
+                                                id="headingThree"
+                                            >
+                                                <button
+                                                    class="accordion-button collapsed"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseThree"
+                                                    aria-expanded="false"
+                                                    aria-controls="collapseThree"
+                                                >
+                                                    Accordion Item #3
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapseThree"
+                                                class="accordion-collapse collapse"
+                                                aria-labelledby="headingThree"
+                                                data-bs-parent="#accordionExample"
+                                            >
+                                                <div class="accordion-body">
+                                                    <strong
+                                                        >This is the third
+                                                        item's accordion
+                                                        body.</strong
+                                                    >
+                                                    It is hidden by default,
+                                                    until the collapse plugin
+                                                    adds the appropriate classes
+                                                    that we use to style each
+                                                    element. These classes
+                                                    control the overall
+                                                    appearance, as well as the
+                                                    showing and hiding via CSS
+                                                    transitions. You can modify
+                                                    any of this with custom CSS
+                                                    or overriding our default
+                                                    variables. It's also worth
+                                                    noting that just about any
+                                                    HTML can go within the
+                                                    <code>.accordion-body</code
+                                                    >, though the transition
+                                                    does limit overflow.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2
+                                                class="accordion-header"
+                                                id="heading4"
+                                            >
+                                                <button
+                                                    class="accordion-button collapsed"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapse4"
+                                                    aria-expanded="false"
+                                                    aria-controls="collapse4"
+                                                >
+                                                    Accordion Item #4
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapse4"
+                                                class="accordion-collapse collapse"
+                                                aria-labelledby="heading4"
+                                                data-bs-parent="#accordionExample"
+                                            >
+                                                <div class="accordion-body">
+                                                    <strong
+                                                        >This is the third
+                                                        item's accordion
+                                                        body.</strong
+                                                    >
+                                                    It is hidden by default,
+                                                    until the collapse plugin
+                                                    adds the appropriate classes
+                                                    that we use to style each
+                                                    element. These classes
+                                                    control the overall
+                                                    appearance, as well as the
+                                                    showing and hiding via CSS
+                                                    transitions. You can modify
+                                                    any of this with custom CSS
+                                                    or overriding our default
+                                                    variables. It's also worth
+                                                    noting that just about any
+                                                    HTML can go within the
+                                                    <code>.accordion-body</code
+                                                    >, though the transition
+                                                    does limit overflow.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2
+                                                class="accordion-header"
+                                                id="heading5"
+                                            >
+                                                <button
+                                                    class="accordion-button collapsed"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#collapse5"
+                                                    aria-expanded="false"
+                                                    aria-controls="collapse5"
+                                                >
+                                                    Accordion Item #5
+                                                </button>
+                                            </h2>
+                                            <div
+                                                id="collapse5"
+                                                class="accordion-collapse collapse"
+                                                aria-labelledby="heading5"
+                                                data-bs-parent="#accordionExample"
+                                            >
+                                                <div class="accordion-body">
+                                                    <strong
+                                                        >This is the third
+                                                        item's accordion
+                                                        body.</strong
+                                                    >
+                                                    It is hidden by default,
+                                                    until the collapse plugin
+                                                    adds the appropriate classes
+                                                    that we use to style each
+                                                    element. These classes
+                                                    control the overall
+                                                    appearance, as well as the
+                                                    showing and hiding via CSS
+                                                    transitions. You can modify
+                                                    any of this with custom CSS
+                                                    or overriding our default
+                                                    variables. It's also worth
+                                                    noting that just about any
+                                                    HTML can go within the
+                                                    <code>.accordion-body</code
+                                                    >, though the transition
+                                                    does limit overflow.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Button trigger modal -->
+                    <button
+                        type="button"
+                        class="btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                        id="dashboard-list-out"
+                    >
+                        <h3>記事本</h3>
+                        <div class="dashboard-list">
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Sit, nobis obcaecati
+                                reprehenderit voluptatem aperiam natus non in a
+                                voluptas deserunt pariatur iusto ex, voluptatum
+                                assumenda culpa perspiciatis repellendus et!
+                                Voluptas?
+                            </p>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Sit, nobis obcaecati
+                                reprehenderit voluptatem aperiam natus non in a
+                                voluptas deserunt pariatur iusto ex, voluptatum
+                                assumenda culpa perspiciatis repellendus et!
+                                Voluptas?
+                            </p>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Sit, nobis obcaecati
+                                reprehenderit voluptatem aperiam natus non in a
+                                voluptas deserunt pariatur iusto ex, voluptatum
+                                assumenda culpa perspiciatis repellendus et!
+                                Voluptas?
+                            </p>
+                        </div>
+                    </button>
+                    <!-- Modal -->
+                    <div
+                        class="modal fade"
+                        id="exampleModal"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                    >
+                        <div
+                            class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable"
+                        >
+                            <div class="modal-content" id="modal-content">
+                                <div
+                                    class="modal-header"
+                                    id="modal-header-list"
+                                >
+                                    <h5
+                                        class="modal-title"
+                                        id="exampleModalLabel"
+                                    >
+                                        記事本
+                                    </h5>
+                                    <button
+                                        class="btn"
+                                        data-bs-target="#exampleModalToggle2"
+                                        data-bs-toggle="modal"
+                                        id="list_inn"
+                                    >
+                                        <img src="icon/add.svg" alt="" />
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="dash_list_1">
+                                        <button type="button" class="btn">
+                                            <img src="icon/cancel.png" alt="" />
+                                        </button>
+                                        <p>更新時間：2024/01/01</p>
+
+                                        <button
+                                            type="button"
+                                            class="btn"
+                                            data-bs-target="#exampleModalToggle2"
+                                            data-bs-toggle="modal"
+                                        >
+                                            <p id="dash_list">
+                                                Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit.
+                                                Hic eius, possimus vitae officia
+                                                laboriosam iure!
+                                            </p>
+                                        </button>
+                                    </div>
+                                    <div class="dash_list_1">
+                                        <button type="button" class="btn">
+                                            <img src="icon/cancel.png" alt="" />
+                                        </button>
+                                        <p>更新時間：2024/01/01</p>
+
+                                        <button
+                                            type="button"
+                                            class="btn"
+                                            data-bs-target="#exampleModalToggle2"
+                                            data-bs-toggle="modal"
+                                        >
+                                            <p id="dash_list">
+                                                Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit.
+                                                Hic eius, possimus vitae officia
+                                                laboriosam iure!
+                                            </p>
+                                        </button>
+                                    </div>
+                                    <div class="dash_list_1">
+                                        <button type="button" class="btn">
+                                            <img src="icon/cancel.png" alt="" />
+                                        </button>
+                                        <p>更新時間：2024/01/01</p>
+
+                                        <button
+                                            type="button"
+                                            class="btn"
+                                            data-bs-target="#exampleModalToggle2"
+                                            data-bs-toggle="modal"
+                                        >
+                                            <p id="dash_list">
+                                                Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit.
+                                                Hic eius, possimus vitae officia
+                                                laboriosam iure!
+                                            </p>
+                                        </button>
+                                    </div>
+                                    <div class="dash_list_1">
+                                        <button type="button" class="btn">
+                                            <img src="icon/cancel.png" alt="" />
+                                        </button>
+                                        <p>更新時間：2024/01/01</p>
+
+                                        <button
+                                            type="button"
+                                            class="btn"
+                                            data-bs-target="#exampleModalToggle2"
+                                            data-bs-toggle="modal"
+                                        >
+                                            <p id="dash_list">
+                                                Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit.
+                                                Hic eius, possimus vitae officia
+                                                laboriosam iure!
+                                            </p>
+                                        </button>
+                                    </div>
+                                    <div class="dash_list_1">
+                                        <button type="button" class="btn">
+                                            <img src="icon/cancel.png" alt="" />
+                                        </button>
+                                        <p>更新時間：2024/01/01</p>
+
+                                        <button
+                                            type="button"
+                                            class="btn"
+                                            data-bs-target="#exampleModalToggle2"
+                                            data-bs-toggle="modal"
+                                        >
+                                            <p id="dash_list">
+                                                Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit.
+                                                Hic eius, possimus vitae officia
+                                                laboriosam iure!
+                                            </p>
+                                        </button>
+                                    </div>
+                                    <div class="dash_list_1">
+                                        <button type="button" class="btn">
+                                            <img src="icon/cancel.png" alt="" />
+                                        </button>
+                                        <p>更新時間：2024/01/01</p>
+
+                                        <button
+                                            type="button"
+                                            class="btn"
+                                            data-bs-target="#exampleModalToggle2"
+                                            data-bs-toggle="modal"
+                                        >
+                                            <p id="dash_list">
+                                                Lorem ipsum dolor sit amet
+                                                consectetur adipisicing elit.
+                                                Hic eius, possimus vitae officia
+                                                laboriosam iure!
+                                            </p>
+                                        </button>
+                                    </div>
+
+                                    <div
+                                        class="modal-footer"
+                                        id="modal-footer_cneter"
+                                    >
+                                        <button
+                                            type="button"
+                                            class="btn"
+                                            id="btn-green"
+                                            data-bs-dismiss="modal"
+                                        >
+                                            結束
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn" id="qrcode-btn-menu">
+            <a href="index.html">
+                <img src="icon/menu.svg" alt="" />
+            </a>
+        </button>
+
+        <div
+            class="modal fade"
+            id="exampleModalToggle2"
+            aria-hidden="true"
+            aria-labelledby="exampleModalToggleLabel2"
+            tabindex="-1"
+        >
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content" id="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalToggleLabel2">
+                            新增記事本
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="add_list_1">
+                            <input
+                                type="date"
+                                id="start"
+                                name="trip-start"
+                                value="2018-07-22"
+                                min="2023-01-01"
+                            />
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="text"
+                                aria-label="text"
+                                aria-describedby="basic-addon1"
+                            />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            class="btn btn-secondary"
+                            data-bs-target="#exampleModal"
+                            data-bs-toggle="modal"
+                        >
+                            <!-- 改data-bs-target -->
+                            上一步
+                        </button>
+                        <button
+                            class="btn"
+                            data-bs-target="#exampleModal"
+                            data-bs-toggle="modal"
+                            id="btn-green"
+                        >
+                            <!-- 改data-bs-target -->
+                            儲存
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

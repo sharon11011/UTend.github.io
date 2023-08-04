@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" style="background: #f2f2f2">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="popper.min.js">
+        <link
+        rel="stylesheet"
+        href="https://cdn.rawgit.com/angular/bower-material/v1.1.4/angular-material.min.css"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdn.rawgit.com/dpoetzsch/md-pickers/1.1.0/dist/mdPickers.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script src="https://cdn.rawgit.com/dpoetzsch/md-pickers/1.1.0/dist/mdPickers.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-messages.min.js"></script>
+        <title>銷貨明細/退貨</title>
+    </head>
+    <body style="background-color: #f2f2f2;border: 1px solid black; min-height: auto;">
+        <header class="pos_header">
+            <div class="pos_header_left">
+                <a href="pos_home.html" style="filter: contrast(.1);">
+                    <img src="icon/back.svg" alt="" />
+                </a>
+                <div class="pos_return_title">個人銷貨明細</div>
+                <div class="header_line">|</div>
+                <div class="pos_search_return">
+                    
+                    <img src="pos_icon/search.svg" alt="">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="form_control"
+                        placeholder="輸入條碼、單號、電話"
+                        aria-label="Username"
+                        aria-describedby="basic-addon1"
+                    />
+                </div>
+                <div id="time_interval">
+                    <div ng-app="demo" ng-controller="demoController">
+                        <div layout="column" flex>
+                            <div layout="row" flex>
+                                <mdp-date-picker
+                                    ng-model="date1"
+                                    mdp-placeholder="選擇日期"
+                                ></mdp-date-picker>
+                                <mdp-time-picker
+                                    ng-model="date1"
+                                    mdp-placeholder="選擇日期"
+                                ></mdp-time-picker>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+               
+                <div
+                    class="offcanvas offcanvas-end"
+                    tabindex="-1"
+                    id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel"
+                >
+                    <div class="offcanvas-header" id="offcanvas-header">
+                        <button
+                            type="button"
+                            class="btn-close text-reset"
+                            id="pos_padding_close"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                </div>
+            </div>
+            <div class="pos_header_right">
+                <button id="pos_person" type="button" 
+                class="btn position-relative"
+                data-bs-toggle="modal" 
+                data-bs-target="#exampleModalperson">
+                    <div>daisy1234</div>
+                </button>
+        </header>
+
+
+
+        <section class="pos_com_body_checkout_re">
+            <div class="com_inn_re">
+                <div class="pos_sale_details_title">
+                    <div>結帳時間</div>
+                    <div>部門</div>
+                    <div>發票號碼</div>
+                    <div>會員</div>
+                    <div>總額</div>
+                    <div>現金</div>
+                    <div>信用卡</div>
+                    <div>載具號碼</div>
+                </div>
+                <button type="button" class="btn" id="pos_sale_details_inn">
+                    <div class="pos_sale_details_time">2024/01/01,09:23</div>
+                    <div>A01</div>
+                    <div>20783933</div>
+                    <div>王小明</div>
+                    <div>300</div>
+                    <div>300</div>
+                    <div>0</div>
+                    <div>/4WRORSR</div>
+                </button>
+                <button type="button" class="btn" id="pos_sale_details_inn">
+                    <div class="pos_sale_details_time">2024/01/01,10:24</div>
+                    <div>A01</div>
+                    <div>20783987</div>
+                    <div>彭小茹</div>
+                    <div>1,000</div>
+                    <div>1,000</div>
+                    <div>0</div>
+                    <div>/4WRORSR</div>
+                </button>
+                <button type="button" class="btn" id="pos_sale_details_inn">
+                    <div class="pos_sale_details_time">2024/01/01,15:10</div>
+                    <div>A01</div>
+                    <div>20783900</div>
+                    <div>黃詩雲</div>
+                    <div>1,000</div>
+                    <div>1,000</div>
+                    <div>0</div>
+                    <div>/4WRORSR</div>
+                </button>
+                <button type="button" class="btn" id="pos_sale_details_inn">
+                    <div class="pos_sale_details_time">2024/01/01,09:23</div>
+                    <div>A01</div>
+                    <div>20783933</div>
+                    <div>王小明</div>
+                    <div>300</div>
+                    <div>300</div>
+                    <div>0</div>
+                    <div>/4WRORSR</div>
+                </button>
+                <button type="button" class="btn" id="pos_sale_details_inn">
+                    <div class="pos_sale_details_time">2024/01/01,09:23</div>
+                    <div>A01</div>
+                    <div>20783933</div>
+                    <div>王小明</div>
+                    <div>300</div>
+                    <div>300</div>
+                    <div>0</div>
+                    <div>/4WRORSR</div>
+                </button>
+                <button type="button" class="btn" id="pos_sale_details_inn">
+                    <div class="pos_sale_details_time">2024/01/01,09:23</div>
+                    <div>A01</div>
+                    <div>20783933</div>
+                    <div>王小明</div>
+                    <div>300</div>
+                    <div>300</div>
+                    <div>0</div>
+                    <div>/4WRORSR</div>
+                </button>
+                <button type="button" class="btn" id="pos_sale_details_inn">
+                    <div class="pos_sale_details_time">2024/01/01,09:23</div>
+                    <div>A01</div>
+                    <div>20783933</div>
+                    <div>王小明</div>
+                    <div>300</div>
+                    <div>300</div>
+                    <div>0</div>
+                    <div>/4WRORSR</div>
+                </button>
+                <button type="button" class="btn" id="pos_sale_details_inn">
+                    <div class="pos_sale_details_time">2024/01/01,09:23</div>
+                    <div>A01</div>
+                    <div>20783933</div>
+                    <div>王小明</div>
+                    <div>300</div>
+                    <div>300</div>
+                    <div>0</div>
+                    <div>/4WRORSR</div>
+                </button>
+                <button type="button" class="btn" id="pos_sale_details_inn">
+                    <div class="pos_sale_details_time">2024/01/01,09:23</div>
+                    <div>A01</div>
+                    <div>20783933</div>
+                    <div>王小明</div>
+                    <div>300</div>
+                    <div>300</div>
+                    <div>0</div>
+                    <div>/4WRORSR</div>
+                </button>
+                <button type="button" class="btn" id="pos_sale_details_inn">
+                    <div class="pos_sale_details_time">2024/01/01,09:23</div>
+                    <div>A01</div>
+                    <div>20783933</div>
+                    <div>王小明</div>
+                    <div>300</div>
+                    <div>300</div>
+                    <div>0</div>
+                    <div>/4WRORSR</div>
+                </button>
+                <button type="button" class="btn" id="pos_sale_details_inn">
+                    <div class="pos_sale_details_time">2024/01/01,09:23</div>
+                    <div>A01</div>
+                    <div>20783933</div>
+                    <div>王小明</div>
+                    <div>300</div>
+                    <div>300</div>
+                    <div>0</div>
+                    <div>/4WRORSR</div>
+                </button>
+                <button type="button" class="btn" id="pos_sale_details_inn">
+                    <div class="pos_sale_details_time">2024/01/01,09:23</div>
+                    <div>A01</div>
+                    <div>20783933</div>
+                    <div>王小明</div>
+                    <div>300</div>
+                    <div>300</div>
+                    <div>0</div>
+                    <div>/4WRORSR</div>
+                </button>
+
+
+                
+            </div>
+            <div class="com_condition_re_out">
+                <div class="com_condition_re_self">
+                    <div class="com_condition_re_top">
+                        <div class="pos_sale_details_title_2">
+                            <div>商品編號</div>
+                            <div>商品名稱</div>
+                            <div>金額</div>
+                            <div>數量</div>
+                        </div>
+                        <div class="pos_sale_details_inn_2">
+                            <div>000011</div>
+                            <a tabindex="0" 
+                            class="btn btn-lg" 
+                            role="button" 
+                            data-bs-placement="bottom"
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="focus" 
+                            id="pos_sale_details_com_text"
+                            title=" 新萬仁 綠油精 3g(乙類成藥)">
+                            新萬仁 綠油精 3g(乙類成藥)
+                            </a>
+                            <div>100</div>
+                            <div>1</div>
+                        </div>
+                        <div class="pos_sale_details_inn_2">
+                            <div>000012</div>
+                            <a tabindex="0" 
+                            class="btn btn-lg" 
+                            role="button" 
+                            data-bs-placement="bottom"
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="focus" 
+                            id="pos_sale_details_com_text"
+                            title="保麗淨 假牙清潔錠2入">
+                            保麗淨 假牙清潔錠2入
+                            </a>
+                            <div>100</div>
+                            <div>1</div>
+                        </div>
+                        <div class="pos_sale_details_inn_2">
+                            <div>000013</div>
+                            <a tabindex="0" 
+                            class="btn btn-lg" 
+                            role="button" 
+                            data-bs-placement="bottom"
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="focus" 
+                            id="pos_sale_details_com_text"
+                            title=" 護妍天使 新手急救組(水楊酸日用24貼x1盒+淨瑕修護24貼x1盒)">
+                            護妍天使 新手急救組(水楊酸日用24貼x1盒+淨瑕修護24貼x1盒)
+                            </a>
+                            <div>100</div>
+                            <div>1</div>
+                        </div>
+                        
+                    </div>
+                    <div class="com_condition_re_bt">
+                        <div>消費總額：300元</div>
+                        <div>銷售員：daisy</div>
+                    </div>
+            </div>
+            
+            
+            
+        </section>
+
+      
+         
+        <!-- Modal person-->
+        <div class="modal fade" id="exampleModalperson" tabindex="-1" aria-labelledby="pos_exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">
+                    個人資訊
+                    <p>登入時間：2024/01/01 13:00</p>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="pos_modal_notic_body">
+                    <a href="">
+                        <button type="button" class="btn" id="pos_modal_btn_bar">標籤設定</button>
+                    </a>
+                    <a href="">
+                        <button type="button" class="btn" id="pos_modal_btn_bar">發票設定</button>
+                    </a>
+                    <a href="pos_return_self.html">
+                        <button type="button" class="btn" id="pos_modal_btn_bar">銷貨明細</button>
+                    </a>
+                    <a href="pos_reconcile.html">
+                            <button 
+                        type="button" class="btn" id="pos_modal_btn_bar">收銀對帳
+                        </button>
+                    </a>
+                    
+                    
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"data-bs-dismiss="modal">退出</button>
+                <button type="button" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" class="btn" id="pos_modal_btn" data-bs-dismiss="modal">登出</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Modal_return -->
+        <div class="modal fade" id="exampleModal_return" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">退貨</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                 <div class="com_condition_re_top">
+                        <div class="pos_sale_details_title_modal">
+                            <div>商品編號</div>
+                            <div>商品名稱</div>
+                            <div>金額</div>
+                            <div>數量</div>
+                            <div>退貨數量</div>
+                        </div>
+                        <div class="pos_sale_details_modal">
+                            <div>000011</div>
+                            <a tabindex="0" 
+                            class="btn btn-lg" 
+                            role="button" 
+                            data-bs-placement="bottom"
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="focus" 
+                            id="pos_sale_details_com_text_modal"
+                            title=" 新萬仁 綠油精 3g(乙類成藥)">
+                            新萬仁 綠油精 3g(乙類成藥)
+                            </a>
+                            <div>100</div>
+                            <div>1</div>
+                            <div class="pos_com_text">
+                                <button type="button" class="btn" id="com_num">-</button>
+                                        0
+                                <button type="button" class="btn" id="com_num">+</button>
+                            </div>
+                        </div>
+                        <div class="pos_sale_details_modal">
+                            <div>000012</div>
+                            <a tabindex="0" 
+                            class="btn btn-lg" 
+                            role="button" 
+                            data-bs-placement="bottom"
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="focus" 
+                            id="pos_sale_details_com_text_modal"
+                            title="保麗淨 假牙清潔錠2入">
+                            保麗淨 假牙清潔錠2入
+                            </a>
+                            <div>100</div>
+                            <div>1</div>
+                            <div class="pos_com_text">
+                                <button type="button" class="btn" id="com_num">-</button>
+                                        0
+                                <button type="button" class="btn" id="com_num">+</button>
+                            </div>
+                        </div>
+                        <div class="pos_sale_details_modal">
+                            <div>000013</div>
+                            <a tabindex="0" 
+                            class="btn btn-lg" 
+                            role="button" 
+                            data-bs-placement="bottom"
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="focus" 
+                            id="pos_sale_details_com_text_modal"
+                            title=" 護妍天使 新手急救組(水楊酸日用24貼x1盒+淨瑕修護24貼x1盒)">
+                            護妍天使 新手急救組(水楊酸日用24貼x1盒+淨瑕修護24貼x1盒)
+                            </a>
+                            <div>100</div>
+                            <div>1</div>
+                            <div class="pos_com_text">
+                                <button type="button" class="btn" id="com_num">-</button>
+                                        0
+                                <button type="button" class="btn" id="com_num">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">退出</button>
+                <button type="button" class="btn" id="pos_modal_btn">確認送出</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        
+        <script>
+            var popoverTriggerList = [].slice.call(
+                document.querySelectorAll('[data-bs-toggle="popover"]')
+            );
+            var popoverList = popoverTriggerList.map(function (
+                popoverTriggerEl
+            ) {
+                return new bootstrap.Popover(popoverTriggerEl);
+            });
+        </script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+            })
+        </script>
+        <script>
+            (function () {
+                "use strict";
+                /**
+                 * Created by Robin Thoni on 6/21/17.
+                 */
+
+                Date.prototype.addDays = function (days) {
+                    var dat = new Date(this.valueOf());
+                    dat.setDate(dat.getDate() + days);
+                    return dat;
+                };
+
+                angular
+                    .module("demo", ["ngMaterial", "ngMessages", "mdPickers"])
+
+                    .config([function () {}])
+
+                    .run([
+                        "$location",
+                        "$mdpLocale",
+                        function ($location, $mdpLocale) {
+                            if (location.search !== "?useDefaults") {
+                                // Quick and dirty
+                                $mdpLocale.time.minTime = "10h00";
+                                $mdpLocale.time.maxTime = "22h42";
+                                $mdpLocale.time.okLabel = "Valider";
+                                $mdpLocale.time.cancelLabel = "Annuler";
+                                $mdpLocale.time.timeFormat = "HH[h]mm";
+                                $mdpLocale.time.noFloat = true;
+                                $mdpLocale.time.openOnClick = true;
+                                $mdpLocale.time.autoSwitch = true;
+                                $mdpLocale.time.ampm = true;
+                                $mdpLocale.time.clearOnCancel = true;
+
+                                $mdpLocale.date.minDate = new Date().addDays(
+                                    -2
+                                );
+                                $mdpLocale.date.maxDate = new Date().addDays(2);
+                                $mdpLocale.date.okLabel = "Valider";
+                                $mdpLocale.date.cancelLabel = "Annuler";
+                                $mdpLocale.date.dateFilter = function (date) {
+                                    return date.getDate() % 2 !== 0;
+                                };
+                                $mdpLocale.date.dateFormat = "DD/MM/YYYY";
+                                $mdpLocale.date.displayFormat = "ddd DD MMM";
+                                $mdpLocale.date.noFloat = true;
+                                $mdpLocale.date.openOnClick = true;
+                                $mdpLocale.date.clearOnCancel = true;
+                            }
+                        },
+                    ]);
+                /**
+                 * Created by Robin Thoni on 6/21/17.
+                 */
+
+                angular.module("demo").controller("demoController", [
+                    "$scope",
+                    "$mdpDatePicker",
+                    "$mdpTimePicker",
+                    function ($scope, $mdpDatePicker, $mdpTimePicker) {
+                        $scope.date1 = null;
+                    },
+                ]);
+            })();
+        </script>
+    </body>
+</html>

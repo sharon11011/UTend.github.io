@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en" style="background: #f2f2f2">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="popper.min.js">
+        <title>結帳主頁</title>
+    </head>
+    <body style="background-color: #f2f2f2;">
+        <header class="pos_header">
+            <div class="pos_header_left">
+                <div class="pos_mem">
+                    <button
+                    id="pos_mem"
+                    type="button" 
+                    class="btn position-relative"
+                    data-bs-toggle="modal" data-bs-target="#exampleModalmember"    
+                    >
+                        <img src="pos_icon/member.svg" alt="" />
+                        會員
+                    </button>
+                </div>
+                <div class="header_line">|</div>
+                <div class="pos_search">
+                    <img src="pos_icon/search.svg" alt="">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="form_control"
+                        placeholder="輸入條碼、品名"
+                        aria-label="Username"
+                        aria-describedby="basic-addon1"
+                    />
+
+
+                </div>
+                <div class="header_line">|</div>
+                <!-- 通知 -->
+                <div class="pos_notice">
+                    <button 
+                        type="button" 
+                        class="btn position-relative"
+                        data-bs-toggle="modal" data-bs-target="#exampleModalbell">
+                        <img src="pos_icon/bell.svg" alt="" />
+                        <span
+                            class="position-absolute top-0 start-100 badge rounded-pill bg-danger notice_bell"
+                        >
+                            3
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                    </button>
+                </div>
+                <!-- 未結單 -->
+                <a href="pos_home.html">
+                    <button
+                    class="btn"
+                    id="pos_padding"
+                    type="button"
+                >
+                    存單
+                </button>
+                </a>
+                
+                <button
+                    class="btn"
+                    id="pos_padding"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"
+                >
+                    取單
+                </button>
+
+                <div
+                    class="offcanvas offcanvas-end"
+                    tabindex="-1"
+                    id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel"
+                >
+                    <div class="offcanvas-header" id="offcanvas-header">
+                        <button
+                            type="button"
+                            class="btn-close text-reset"
+                            id="pos_padding_close"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <!-- 未結單列表 -->
+                    <div class="offcanvas-body" id="offcanvas-body">
+                        <table>
+                            <button
+                                type="button"
+                                class="btn"
+                                id="pos_padding_btn"
+                                data-bs-target="#exampleModalToggle_2" 
+                                data-bs-toggle="modal"
+                            >
+                                <div class="pos_padding_btn_left">
+                                    <div>2024/01/01</div>
+                                    <br />
+                                    <div>
+                                        【常春藤】復她容
+                                        大豆異黃酮錠（60錠/盒）X6
+                                    </div>
+                                </div>
+                                <div style="display: flex;">
+                                    <div class="pos_padding_btn_right">
+                                        <img src="pos_icon/ga.svg" alt="" />
+                                    </div>
+                                    <div class="pos_padding_btn_right">
+                                        <img src="pos_icon/pin.svg" alt="" />
+                                    </div>
+                                </div>
+                            </button>
+                            <button
+                                type="button"
+                                class="btn"
+                                id="pos_padding_btn"
+                            >
+                                <div class="pos_padding_btn_left">
+                                    <div>2024/01/01</div>
+                                    <br />
+                                    <div>
+                                        【常春藤】復她容
+                                        大豆異黃酮錠（60錠/盒）X6
+                                    </div>
+                                </div>
+                                <div style="display: flex;">
+                                    <div class="pos_padding_btn_right">
+                                        <img src="pos_icon/ga.svg" alt="" />
+                                    </div>
+                                    <div class="pos_padding_btn_right">
+                                        <img src="pos_icon/pin.svg" alt="" />
+                                    </div>
+                                </div>
+                               
+
+                            </button>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="pos_header_right">
+                <a href="pos_checkout_recommand.html">
+                    <button 
+                    type="button" 
+                    class="btn"
+                    id="pos_recommend">
+                        <img src="pos_icon/recommend.svg" alt="">
+                    </button>
+                </a>
+                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft" id="pos_menu">
+                    <img src="pos_icon/menu.svg" alt="">
+                </button>
+
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
+                    <div class="offcanvas-header">
+                      <h5 id="offcanvasLeftLabel">快捷選單</h5>
+                      <button
+                            type="button"
+                            class="btn-close text-reset"
+                            id="pos_padding_close"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="pos_shortcut_out">
+                            <a href="pos_checkout_1.html" id="offcanvas-body-a">
+                                 <button type="button" class="btn">
+                                <div class="pos_card_out">
+                                    <img src="pos_icon/f01.jpg" alt="">
+                                    <p>小農鮮舖紅蛋10顆裝 
+                                    </p>
+                                    <p>＄ 130</p>
+                                 </div>
+                            </button>
+                            </a>
+                            <a href="" id="offcanvas-body-a">
+                                <button type="button" class="btn">
+                                <div class="pos_card_out">
+                                <img src="pos_icon/f02.jpg" alt="">
+                                <p>日曜紅棗</p>
+                                <p>＄ 170</p>
+                            </div>
+                            </button>
+                            </a>
+                            <a href="" id="offcanvas-body-a">
+                                <button type="button" class="btn">
+                                <div class="pos_card_out">
+                                <img src="pos_icon/f03.jpg" alt="">
+                                <p>小番茄</p>
+                                <p>＄ 200</p>
+                            </div>
+                            </button>
+                            </a>
+                            <a href="" id="offcanvas-body-a">
+                                <button type="button" class="btn">
+                                <div class="pos_card_out">
+                                <img src="pos_icon/f01.jpg" alt="">
+                                <p>小農鮮舖紅蛋20顆裝</p>
+                                <p>＄ 260</p>
+                            </div>
+                            </button>
+                            </a>
+                            <a href="" id="offcanvas-body-a">
+                                <button type="button" class="btn">
+                                <div class="pos_card_out">
+                                <img src="pos_icon/f02.jpg" alt="">
+                                <p>日曜紅棗（兩斤）</p>
+                                <p>＄ 340</p>
+                            </div>
+                            </button>
+                            </a>
+                            <a href="" id="offcanvas-body-a">
+                                <button type="button" class="btn">
+                                <div class="pos_card_out">
+                                <img src="pos_icon/f03.jpg" alt="">
+                                <p>小農鮮舖紅蛋20顆裝</p>
+                                <p>＄ 260</p>
+                            </div>
+                            </button>
+                            </a>
+                            <a href="" id="offcanvas-body-a">
+                                <button type="button" class="btn">
+                                <div class="pos_card_out">
+                                <img src="pos_icon/f04.jpg" alt="">
+                                <p>枸杞</p>
+                                <p>＄ 190</p>
+                            </div>
+                            </button>
+                            </a>
+                            <a href="" id="offcanvas-body-a">
+                                <button type="button" class="btn">
+                                <div class="pos_card_out">
+                                <img src="pos_icon/f05.jpg" alt="">
+                                <p>冬蟲夏草燉包</p>
+                                <p>＄ 500</p>
+                            </div>
+                            </button>
+                            </a>
+                            <a href="" id="offcanvas-body-a">
+                                <button type="button" class="btn">
+                                <div class="pos_card_out">
+                                <img src="pos_icon/f06.jpg" alt="">
+                                <p>果禮-富士山蘋果（四入）</p>
+                                <p>＄ 400</p>
+                            </div>
+                            </button>
+                            </a>
+                            <a href="" id="offcanvas-body-a">
+                                 <button type="button" class="btn">
+                                                            <div class="pos_card_out">
+                                <img src="pos_icon/f06.jpg" alt="">
+                                <p>果禮-富士山蘋果（六入）</p>
+                                <p>＄ 600</p>
+                            </div>
+                            </button>
+                            </a>
+                           
+
+
+                        </div>
+                    </div>
+                  </div>
+
+                <button id="pos_person" type="button" 
+                class="btn position-relative"
+                data-bs-toggle="modal" 
+                data-bs-target="#exampleModalperson">
+                    <div>daisy1234</div>
+                </button>
+        </header>
+        <section class="pos_com_body_checkout">
+            <div class="com_inn">
+                <div class="com_inn_title">
+                    <div>條碼</div>
+                    <div>商品名</div>
+                    <div>單價</div>
+                    <div>折扣</div>
+                    <div>小計</div>
+                    <div style="padding-left: 60px;">數量</div>
+                    <div>庫存</div>
+                </div>
+                <div class="com_inn_row">
+                    <div class="pos_com_bar">
+                        <div class="pos_com_text">123456</div>
+                        <a tabindex="0" 
+                            class="btn btn-lg" 
+                            role="button" 
+                            data-bs-placement="bottom"
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="focus" 
+                            id="pos_com_title"
+                            title="【力度伸】維他命C+鈣+D3發泡錠（15錠/盒[效期：2024/04]">
+                            【力度伸】維他命C+鈣+D3發泡錠（15錠/盒[效期：2024/04]
+                        </a>
+                        <div class="pos_com_text">1,250</div>
+                        <div class="pos_com_text pos_com_text_red">50</div>
+                        <div class="pos_com_text">1,200</div>
+                        <div class="pos_com_text">
+                            <button type="button" class="btn" id="com_num">-</button>
+                                    1
+                                    <button type="button" class="btn" id="com_num">+</button>
+                        </div>
+                        <div class="pos_com_text">5</div>
+                        <div class="pos_com_text">
+                            <button type="button" class="btn">
+                                <img src="pos_icon/ga.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="com_inn_row_2">
+                    <div class="pos_com_re_line">
+                        <button type="button" class="btn" id="pos_com_re_change_btn">
+                            <img src="pos_icon/change.svg" alt="">
+                        </button>
+                        <div class="pos_com_re_bar">
+                            <div class="pos_com_re_bar_1">
+                                <div>蚓循恆(60粒/盒)</div>
+                                <div>2,000</div>
+                            </div>
+                            <div class="pos_com_re_bar_1">
+                                <div class="pos_re_hot">
+                                    HOT
+                                </div>
+                                <div class="">
+                                    <div class="pos_re_m">
+                                         $
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="com_inn_row">
+                    <div class="pos_com_bar">
+                        <div class="pos_com_text">123456</div>
+                        <a tabindex="0" 
+                            class="btn btn-lg" 
+                            role="button" 
+                            data-bs-placement="bottom"
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="focus" 
+                            id="pos_com_title"
+                            title="derma Angel 護妍天使 新手急救組(水楊酸日用24貼x1盒+淨瑕修護24貼x1盒)
+                            ">
+                            derma Angel 護妍天使 新手急救組(水楊酸日用24貼x1盒+淨瑕修護24貼x1盒)
+
+                        </a>
+                        <div class="pos_com_text">300</div>
+                        <div class="pos_com_text">0</div>
+                        <div class="pos_com_text">300</div>
+                        <div class="pos_com_text">
+                            <button type="button" class="btn" id="com_num">-</button>
+                                    1
+                                    <button type="button" class="btn" id="com_num">+</button>
+                        </div>
+                        <div class="pos_com_text">5</div>
+                        <div class="pos_com_text">
+                            <button type="button" class="btn">
+                                <img src="pos_icon/ga.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="com_inn_row_2">
+                    <div class="pos_com_re_line">
+                        <button type="button" class="btn" id="pos_com_re_change_btn">
+                            <img src="pos_icon/change.svg" alt="">
+                        </button>
+                        <div class="pos_com_re_bar">
+                            <div class="pos_com_re_bar_1">
+                                <div>蚓循恆(60粒/盒)</div>
+                                <div>2,000</div>
+                            </div>
+                            <div class="pos_com_re_bar_1">
+                                <div class="pos_re_hot">
+                                    HOT
+                                </div>
+                                <div class="">
+                                    <div class="pos_re_m">
+                                         $
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="com_inn_row">
+                    <div class="pos_com_bar">
+                        <div class="pos_com_text">123456</div>
+                        <a tabindex="0" 
+                            class="btn btn-lg" 
+                            role="button" 
+                            data-bs-placement="bottom"
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="focus" 
+                            id="pos_com_title"
+                            title="Polident 保麗淨 假牙清潔錠2入(108片/入；共216片)">
+                            Polident 保麗淨 假牙清潔錠2入(108片/入；共216片)
+                        </a>
+                        <div class="pos_com_text">500</div>
+                        <div class="pos_com_text pos_com_text_red">50</div>
+                        <div class="pos_com_text">450</div>
+                        <div class="pos_com_text">
+                            <button type="button" class="btn" id="com_num">-</button>
+                                    3
+                                    <button type="button" class="btn" id="com_num">+</button>
+                        </div>
+                        <div class="pos_com_text">5</div>
+                        <div class="pos_com_text">
+                            <button type="button" class="btn">
+                                <img src="pos_icon/ga.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="com_inn_row_2">
+                    <div class="pos_com_re_line">
+                        <button type="button" class="btn" id="pos_com_re_change_btn">
+                            <img src="pos_icon/change.svg" alt="">
+                        </button>
+                        <div class="pos_com_re_bar">
+                            <div class="pos_com_re_bar_1">
+                                <div>蚓循恆(60粒/盒)</div>
+                                <div>2,000</div>
+                            </div>
+                            <div class="pos_com_re_bar_1">
+                                <div class="pos_re_hot">
+                                    HOT
+                                </div>
+                                <div class="">
+                                    <div class="pos_re_m">
+                                         $
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="com_inn_row">
+                    <div class="pos_com_bar">
+                        <div class="pos_com_text">123456</div>
+                        <a tabindex="0" 
+                            class="btn btn-lg" 
+                            role="button" 
+                            data-bs-placement="bottom"
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="focus" 
+                            id="pos_com_title"
+                            title="吉優適 口腔噴劑 100ml/瓶(口腔黏膜損敷料)">
+                            吉優適 口腔噴劑 100ml/瓶(口腔黏膜損敷料)
+                        </a>
+                        <div class="pos_com_text">1,000</div>
+                        <div class="pos_com_text">0</div>
+                        <div class="pos_com_text">1,200</div>
+                        <div class="pos_com_text">
+                            <button type="button" class="btn" id="com_num">-</button>
+                                    1
+                                    <button type="button" class="btn" id="com_num">+</button>
+                        </div>
+                        <div class="pos_com_text">5</div>
+                        <div class="pos_com_text">
+                            <button type="button" class="btn">
+                                <img src="pos_icon/ga.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="com_inn_row_2">
+                    <div class="pos_com_re_line">
+                        <button type="button" class="btn" id="pos_com_re_change_btn">
+                            <img src="pos_icon/change.svg" alt="">
+                        </button>
+                        <div class="pos_com_re_bar">
+                            <div class="pos_com_re_bar_1">
+                                <div>蚓循恆(60粒/盒)</div>
+                                <div>2,000</div>
+                            </div>
+                            <div class="pos_com_re_bar_1">
+                                <div class="pos_re_hot">
+                                    HOT
+                                </div>
+                                <div class="">
+                                    <div class="pos_re_m">
+                                         $
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="com_inn_row">
+                    <div class="pos_com_bar">
+                        <div class="pos_com_text">123456</div>
+                        <a tabindex="0" 
+                            class="btn btn-lg" 
+                            role="button" 
+                            data-bs-placement="bottom"
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="focus" 
+                            id="pos_com_title"
+                            title="HiruDerm 喜能膚 水凝膠傷口敷料6.5X8.5cm 1盒(2片/盒)">
+                            HiruDerm 喜能膚 水凝膠傷口敷料6.5X8.5cm 1盒(2片/盒)
+                        </a>
+                        <div class="pos_com_text">600</div>
+                        <div class="pos_com_text">0</div>
+                        <div class="pos_com_text">600</div>
+                        <div class="pos_com_text">
+                            <button type="button" class="btn" id="com_num">-</button>
+                                    1
+                                    <button type="button" class="btn" id="com_num">+</button>
+                        </div>
+                        <div class="pos_com_text">5</div>
+                        <div class="pos_com_text">
+                            <button type="button" class="btn">
+                                <img src="pos_icon/ga.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="com_inn_row_2">
+                    <div class="pos_com_re_line">
+                        <button type="button" class="btn" id="pos_com_re_change_btn">
+                            <img src="pos_icon/change.svg" alt="">
+                        </button>
+                        <div class="pos_com_re_bar">
+                            <div class="pos_com_re_bar_1">
+                                <div>蚓循恆(60粒/盒)</div>
+                                <div>2,000</div>
+                            </div>
+                            <div class="pos_com_re_bar_1">
+                                <div class="pos_re_hot">
+                                    HOT
+                                </div>
+                                <div class="">
+                                    <div class="pos_re_m">
+                                         $
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="com_inn_row">
+                    <div class="pos_com_bar">
+                        <div class="pos_com_text">123456</div>
+                        <a tabindex="0" 
+                            class="btn btn-lg" 
+                            role="button" 
+                            data-bs-placement="bottom"
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="focus" 
+                            id="pos_com_title"
+                            title="曼秀雷敦 軟膏 2022 只是ZISHI 限定款 1入(12g/入)">
+                            曼秀雷敦 軟膏 2022 只是ZISHI 限定款 1入(12g/入)
+                        </a>
+                        <div class="pos_com_text">1,200</div>
+                        <div class="pos_com_text">0</div>
+                        <div class="pos_com_text">1,200</div>
+                        <div class="pos_com_text">
+                            <button type="button" class="btn" id="com_num">-</button>
+                                    1
+                                    <button type="button" class="btn" id="com_num">+</button>
+                        </div>
+                        <div class="pos_com_text">5</div>
+                        <div class="pos_com_text">
+                            <button type="button" class="btn">
+                                <img src="pos_icon/ga.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="com_inn_row_2">
+                    <div class="pos_com_re_line">
+                        <button type="button" class="btn" id="pos_com_re_change_btn">
+                            <img src="pos_icon/change.svg" alt="">
+                        </button>
+                        <div class="pos_com_re_bar">
+                            <div class="pos_com_re_bar_1">
+                                <div>蚓循恆(60粒/盒)</div>
+                                <div>2,000</div>
+                            </div>
+                            <div class="pos_com_re_bar_1">
+                                <div class="pos_re_hot">
+                                    HOT
+                                </div>
+                                <div class="">
+                                    <div class="pos_re_m">
+                                         $
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="com_inn_row">
+                    <div class="pos_com_bar">
+                        <div class="pos_com_text">123456</div>
+                        <a tabindex="0" 
+                            class="btn btn-lg" 
+                            role="button" 
+                            data-bs-placement="bottom"
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="focus" 
+                            id="pos_com_title"
+                            title="Polident 保麗淨 放心笑開懷-假牙黏著劑2入-清新薄荷(60g/入)">
+                            Polident 保麗淨 放心笑開懷-假牙黏著劑2入-清新薄荷(60g/入)
+                        </a>
+                        <div class="pos_com_text">1,500</div>
+                        <div class="pos_com_text">0</div>
+                        <div class="pos_com_text">1,500</div>
+                        <div class="pos_com_text">
+                            <button type="button" class="btn" id="com_num">-</button>
+                                    1
+                                    <button type="button" class="btn" id="com_num">+</button>
+                        </div>
+                        <div class="pos_com_text">5</div>
+                        <div class="pos_com_text">
+                            <button type="button" class="btn">
+                                <img src="pos_icon/ga.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="com_inn_row_2">
+                    <div class="pos_com_re_line">
+                        <button type="button" class="btn" id="pos_com_re_change_btn">
+                            <img src="pos_icon/change.svg" alt="">
+                        </button>
+                        <div class="pos_com_re_bar">
+                            <div class="pos_com_re_bar_1">
+                                <div>蚓循恆(60粒/盒)</div>
+                                <div>2,000</div>
+                            </div>
+                            <div class="pos_com_re_bar_1">
+                                <div class="pos_re_hot">
+                                    HOT
+                                </div>
+                                <div class="">
+                                    <div class="pos_re_m">
+                                         $
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="com_condition">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item" id="pos_dis_out">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button 
+                        id="pos_discount"
+                        class="accordion-button" 
+                        type="button" 
+                        data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" 
+                        aria-controls="collapseOne">
+                            全館優惠
+                        </button>
+                      </h2>
+                      <div 
+                      id="collapseOne" 
+                      class="accordion-collapse collapse show" aria-labelledby="headingOne" >
+                        <div class="accordion-body" id="discount_bar_out">
+                          <div class="discount_bar">
+                            <div>滿3,000送300</div>
+                          </div>
+                          <div class="discount_bar">
+                            <div>滿6,000送600</div>
+                          </div>
+                          <div class="discount_bar_gray">
+                            <div>滿10,000送1,000</div>
+                          </div>
+                          <div class="discount_bar_gray">
+                            <div>滿12,000送1,200</div>
+                          </div>
+                          <div class="discount_bar_gray">
+                            <div>滿14,000送14,00</div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <div class="accordion-item" id="pos_dis_out_2">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button 
+                        class="accordion-button collapsed" 
+                        type="button" 
+                        data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" 
+                        aria-controls="collapseTwo"
+                        id="pos_discount_2">
+                          單品優惠
+                        </button>
+                      </h2>
+                      <div 
+                      id="collapseTwo" 
+                      class="accordion-collapse collapse show" aria-labelledby="headingTwo" id="">
+                      <div class="accordion-body" id="discount_bar_out">
+                        <div class="discount_bar">
+                          <div>維他命C+鈣+D3發泡錠,折50元</div>
+                        </div>
+                        <div class="discount_bar">
+                          <div>保麗淨 假牙清潔錠2入,兩盒9折
+                        </div>
+                        </div>
+                        <div class="discount_bar_gray">
+                          <div>護妍天使'新手急救組' 滿兩盒折10元</div>
+                        </div>
+                        <div class="discount_bar_gray">
+                          <div>吉優適 口腔噴劑 100ml/瓶,3入9折</div>
+                        </div>
+                        <div class="discount_bar_gray">
+                          <div>喜能膚 水凝膠傷口敷料,滿3000折200</div>
+                        </div>
+                        <div class="discount_bar_gray">
+                            <div>其他</div>
+                          </div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+               
+        </section>
+
+        <footer class="pos_footer pos_footer_betw">
+            <div class="pos_left">
+                <div class="pos_f1">
+                    <p>件數</p>
+                    <p>9</p>
+                </div>
+                <div class="pos_f1">
+                    <p>總價</p>
+                    <p>7,350</p>
+                </div>
+                <div class="pos_f1">
+                    <p>折扣</p>
+                    <p>200</p>
+                </div>
+                <button
+                class="btn"
+                id="pos_padding_1"
+                type="button"
+                data-bs-toggle="modal" 
+                data-bs-target="#exampleModal_print"
+                >
+                    顯示末筆
+                </button>
+            </div>
+            <a href="pos_checkout_2.html">
+                <div class="pos_confirm">
+                    確認送出
+                </div>
+            </a>
+            
+        </footer>
+        
+        <!-- Modal Notic-->
+        <div class="modal fade" id="exampleModalbell" tabindex="-1" aria-labelledby="pos_exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">今日通知</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="pos_modal_notic_body">
+                    <table>
+                        <tr>
+                            <th>
+                                <img src="icon/star.svg" alt="">
+                            </th>
+                            <th>今日變價通知</th>
+                        </tr>   
+                    </table>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn" id="pos_modal_btn" data-bs-dismiss="modal">退出</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        <!-- Modal person-->
+        <div class="modal fade" id="exampleModalperson" tabindex="-1" aria-labelledby="pos_exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">個人資訊</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="pos_modal_notic_body">
+                    <a href="">
+                        <button type="button" class="btn" id="pos_modal_btn_bar">標籤設定</button>
+                    </a>
+                    <a href="">
+                        <button type="button" class="btn" id="pos_modal_btn_bar">發票設定</button>
+                    </a>
+                    <a href="pos_return_self.html">
+                        <button type="button" class="btn" id="pos_modal_btn_bar">銷貨明細</button>
+                    </a>
+                    <a href="pos_reconcile.html">
+                        <button 
+                        type="button" class="btn" id="pos_modal_btn_bar">收銀對帳
+                        </button>
+                    </a>
+                    
+                    
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"data-bs-dismiss="modal">退出</button>
+                <button type="button" class="btn" id="pos_modal_btn" data-bs-dismiss="modal">登出</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Modal member-->
+        <div class="modal fade" id="exampleModalmember" tabindex="-1" aria-labelledby="pos_exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">
+                    會員
+                    <div class="pos_mem_search">
+                        <img src="pos_icon/search.svg" alt="" />
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="輸入姓名、電話"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                        />
+                    </div>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="pos_modal_member_body">
+                    <table>
+                        <button type="button" class="btn" id="pos_mem_info">
+                            <div>王小明</div>
+                            <div>0912-345-678</div>
+                        </button>
+                        <button type="button" class="btn" id="pos_mem_info">
+                            <div>王小明</div>
+                            <div>0912-345-678</div>
+                        </button>
+                        <button type="button" class="btn" id="pos_mem_info">
+                            <div>王小明</div>
+                            <div>0912-345-678</div>
+                        </button>
+                        <button type="button" class="btn" id="pos_mem_info">
+                            <div>王小明</div>
+                            <div>0912-345-678</div>
+                        </button>
+                        <button type="button" class="btn" id="pos_mem_info">
+                            <div>王小明</div>
+                            <div>0912-345-678</div>
+                        </button>
+                        <button type="button" class="btn" id="pos_mem_info">
+                            <div>王小明</div>
+                            <div>0912-345-678</div>
+                        </button>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn" id="pos_modal_btn" data-bs-dismiss="modal">送出</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- modal-2 -->
+        <div class="modal fade" id="exampleModalToggle_2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalToggleLabel2">提醒</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <th>是否儲存現在訂單？</th>
+                        </tr>   
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <a href="pos_home.html">
+                        <button 
+                        class="btn"
+                        id="pos_modal_btn"
+                        data-bs-toggle="modal">儲存</button>
+                    </a>
+                    <a href="pos_home.html">
+                        <button 
+                        class="btn btn-secondary"
+                        data-bs-toggle="modal">取消</button>
+                    </a>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- Modal print-->
+        <div class="modal fade" id="exampleModal_print" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+
+                <h5 class="modal-title pos_modal_title" id="pos_exampleModalLabel">訂單顯示</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body modal-dialog-scrollable">
+                    <div class="pos_order_top">
+                        <button type="button" class="btn" id="pos_modal_btn">上一筆</button>
+                        <button type="button" class="btn" id="pos_modal_btn">下一筆</button>
+                    </div>
+                    <div class="pos_order_middle">
+                        <div class="pos_order_middle_title">交易明細</div>
+                        <div class="pos_order_middle_inn">訂單編號：</div>
+                        <div class="pos_order_middle_inn">受買人統編：</div>
+                        <div class="pos_order_middle_inn">受買人公司：</div>
+                        <div class="pos_order_middle_inn">2024/01/01 19:10:13</div>
+                        <table>
+                            <thead>
+                                <tr class="pos_order_middle_table_title">
+                                    <th>品名</th>
+                                    <th>單價＊數量</th>
+                                    <th>金額</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>【力度伸】維他命C+鈣+D3發泡錠（15錠/盒[效期：2024/04]</td>
+                                </tr>
+                                <tr class="pos_order_middle_table_price">
+                                    <td>1,000*2</td>
+                                    <td>2,000</td>
+                                </tr>
+                                <tr class="pos_order_middle_table_title" style="font-weight:bold;">
+                                    <td>合計2項</td>
+                                    <td>小計：2,000</td>
+                                </tr>
+                                <tr class="pos_order_middle_table_title">
+                                    <td>發票金額：2,000</td>
+                                </tr>
+                                <tr class="pos_order_middle_table_title">
+                                    <td>應稅銷售額：2,000</td>
+                                </tr>
+                                <tr class="pos_order_middle_table_title">
+                                    <td>稅額：94</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">退出</button>
+              </div>
+        </div>
+        <script>
+            var popoverTriggerList = [].slice.call(
+                document.querySelectorAll('[data-bs-toggle="popover"]')
+            );
+            var popoverList = popoverTriggerList.map(function (
+                popoverTriggerEl
+            ) {
+                return new bootstrap.Popover(popoverTriggerEl);
+            });
+        </script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+            })
+        </script>
+    </body>
+</html>
