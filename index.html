@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: white">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous"
+        />
+        <title>主畫面</title>
+    </head>
+    <body class="index_flex">
+        <div class="home_left">
+            <div class="home">
+                <div class="home-top">
+                    <button
+                        type="button"
+                        class="btn pos-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#btn"
+                    >
+                        <img src="icon/pos.svg" alt="" />
+                        <p>POS</p>
+                        <p>結帳收銀</p>
+                    </button>
+    
+                    <button
+                        type="button"
+                        class="btn his-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#btn"
+                    >
+                        <img src="icon/his.svg" alt="" />
+                        <p>HIS</p>
+                        <p>處方調藥</p>
+                    </button>
+                </div>
+                <div class="home-bottom">
+                    <button
+                        type="button"
+                        class="btn poc-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#btn"
+                    >
+                        <img src="icon/poc.svg" alt="" />
+                        <p>POC</p>
+                        <p>健康服務</p>
+                    </button>
+    
+                    <button
+                        type="button"
+                        class="btn base-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#btn"
+                    >
+                        <img src="icon/base.svg" alt="" />
+                        <p>BASE</p>
+                        <p>商品管理</p>
+                    </button>
+    
+                    <button
+                        type="button"
+                        class="btn crm-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#btn"
+                    >
+                        <img src="icon/crm.svg" alt="" />
+                        <p>CRM</p>
+                        <p>會員管理</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="home_right">
+            <div class="use_img">
+                <img src="icon/logo.svg" alt="">
+            </div>
+            <div class="index_list">
+                <div class="index_list_in">
+                    <p> ● item_1</p>
+                    <p> ● item_2</p>
+                    <p> ● item_3</p>
+                    <p> ● item_4</p>
+                </div>
+            </div>
+        </div>
+      
+        
+        <!-- Button trigger modal -->
+
+        <div
+            class="modal fade"
+            id="btn"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" id="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+                        <h3 class="indextit">請掃識別證條碼</h3>
+                    </div>
+                   
+                    </button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" id="btn-green"
+                        data-bs-target="#exampleModalToggle2"
+                        data-bs-toggle="modal">
+                            切換登入方式
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalToggleLabel2">
+                    請輸入帳號密碼
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3 indexinput_center">
+                        <span class="input-group-text" id="basic-addon1"
+                            >帳號</span
+                        >
+                        <input
+                            class="indexinput"
+                            type="text"
+                            class="form-control"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                        />
+                    </div>
+                    <div class="input-group mb-3 indexinput_center">
+                        <span class="input-group-text" id="basic-addon1"
+                            >密碼</span
+                        >
+                        <input
+                            class="indexinput"
+                            type="text"
+                            class="form-control"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                        />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn" id="btn-gray" data-bs-target="#btn" data-bs-toggle="modal">上一步</button>
+                  <button class="btn" id="btn-green" data-bs-target="" data-bs-toggle="modal">登入</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
