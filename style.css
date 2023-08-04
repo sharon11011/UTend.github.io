@@ -181,6 +181,10 @@ html body {
 .indextit {
     margin: 20px 0px;
 }
+.indextit a{
+    text-decoration: none;
+    color: #000;
+}
 /* his-home */
 input {
     display: none;
@@ -260,10 +264,10 @@ input {
 }
 .dashboard-notice p {
     width: 450px;
-
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    font-weight: bold;
 }
 .dashboard-list-out p {
     width: 720px;
@@ -544,7 +548,7 @@ input {
 .dashboard-notice p,
 .dashboard-list p {
     border-bottom: 1px solid gray;
-    font-weight: lighter;
+    font-weight: bold;
     text-align: start;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -3772,4 +3776,19 @@ tr {
 .rx_modal_h5 {
     margin: 0;
     color: #288289;
+}
+.his_notic_renew{
+    color:#ff7676;
+}
+.his_notic_renew_blue{
+    color: #288289;
+}
+#his_notic_renew_blue{
+    color: #288289;
+}
+#exampleModal-notic h5,#exampleModal-notic button ,#exampleModal-notic div{
+    font-size: 20px;
+}
+.add_list_1_1{
+    height: 100px;
 }

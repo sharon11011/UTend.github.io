@@ -21,11 +21,11 @@
                         type="button"
                         class="btn pos-btn"
                         data-bs-toggle="modal"
-                        data-bs-target="#btn"
+                        data-bs-target="#pos_btn"
                     >
                         <img src="icon/pos.svg" alt="" />
                         <p>POS</p>
-                        <p>結帳收銀收銀</p>
+                        <p>結帳收銀</p>
                     </button>
     
                     <button
@@ -44,7 +44,7 @@
                         type="button"
                         class="btn poc-btn"
                         data-bs-toggle="modal"
-                        data-bs-target="#btn"
+                        data-bs-target="#poc_btn"
                     >
                         <img src="icon/poc.svg" alt="" />
                         <p>POC</p>
@@ -91,7 +91,6 @@
       
         
         <!-- Button trigger modal -->
-
         <div
             class="modal fade"
             id="btn"
@@ -111,7 +110,9 @@
                         ></button>
                     </div>
                     <div class="modal-body" id="modal-body">
-                        <h3 class="indextit">請掃識別證條碼</h3>
+                        <h3 class="indextit">
+                            <a href="his-home.html">請掃識別證條碼</a>
+                        </h3>
                     </div>
                    
                     </button>
@@ -167,6 +168,124 @@
               </div>
             </div>
           </div>
+
+
+
+
+          <div
+            class="modal fade"
+            id="pos_btn"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" id="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+                        <h3 class="indextit">
+                            <a href="pos_home.html">請掃識別證條碼</a>
+                        </h3>
+                    </div>
+                   
+                    </button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" id="btn-green"
+                        data-bs-target="#exampleModalToggle2"
+                        data-bs-toggle="modal">
+                            切換登入方式
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalToggleLabel2">
+                    請輸入帳號密碼
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3 indexinput_center">
+                        <span class="input-group-text" id="basic-addon1"
+                            >帳號</span
+                        >
+                        <input
+                            class="indexinput"
+                            type="text"
+                            class="form-control"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                        />
+                    </div>
+                    <div class="input-group mb-3 indexinput_center">
+                        <span class="input-group-text" id="basic-addon1"
+                            >密碼</span
+                        >
+                        <input
+                            class="indexinput"
+                            type="text"
+                            class="form-control"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                        />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn" id="btn-gray" data-bs-target="#btn" data-bs-toggle="modal">上一步</button>
+                  <button class="btn" id="btn-green" data-bs-target="" data-bs-toggle="modal">登入</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- poc -->
+          <div
+            class="modal fade"
+            id="poc_btn"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" id="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+                        <h3 class="indextit">
+                            <a href="https://hhds.asus-healthcare.com/healthhub/Dashboard/DashboardN1">請掃識別證條碼</a>
+                        </h3>
+                    </div>
+                   
+                    </button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" id="btn-green"
+                        data-bs-target="#exampleModalToggle2"
+                        data-bs-toggle="modal">
+                            切換登入方式
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
