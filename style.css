@@ -2689,6 +2689,8 @@ p > .text_red {
     background: url(pos_icon/padding_pack.svg);
     background-repeat: no-repeat;
     filter: brightness(0.4);
+    transform: rotate(180deg);
+    margin-left: 100px;
 }
 #offcanvas-header {
     padding-top: 30px;
